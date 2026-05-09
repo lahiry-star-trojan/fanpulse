@@ -1,0 +1,25 @@
+title,venue,city,date,category,lowest_price,avg_price,median_price,listings,source
+United States vs Paraguay,SoFi Stadium,Los Angeles,2026-06-12,Category 3,1120,1530,1040,477,FIFA Official
+United States vs Paraguay,SoFi Stadium,Los Angeles,2026-06-12,Category 2,1940,1940,1940,280,FIFA Official
+United States vs Paraguay,SoFi Stadium,Los Angeles,2026-06-12,Category 1,2735,2735,2735,150,FIFA Official
+Brazil vs Morocco,MetLife Stadium,New York,2026-06-13,Category 3,1120,1120,1120,240,FIFA Official
+Brazil vs Morocco,MetLife Stadium,New York,2026-06-13,Category 2,1940,1940,1940,180,FIFA Official
+Brazil vs Morocco,MetLife Stadium,New York,2026-06-13,Category 1,2735,2735,2735,120,FIFA Official
+Netherlands vs Japan,AT&T Stadium,Dallas,2026-06-14,Category 3,1120,1120,1120,255,FIFA Official
+England vs Croatia,AT&T Stadium,Dallas,2026-06-17,Category 2,1940,1940,1940,282,FIFA Official
+England vs Croatia,AT&T Stadium,Dallas,2026-06-17,Category 1,2735,2735,2735,150,FIFA Official
+Portugal vs DR Congo,NRG Stadium,Houston,2026-06-17,Category 3,1120,1120,1120,391,FIFA Official
+France vs Senegal,MetLife Stadium,New York,2026-06-16,Category 2,1940,1940,1940,239,FIFA Official
+United States vs Australia,Lumen Field,Seattle,2026-06-19,Category 1,2735,2735,2735,325,FIFA Official
+Round of 32,SoFi Stadium,Los Angeles,2026-06-28,Category 1,790,790,790,410,FIFA Official
+Round of 32,SoFi Stadium,Los Angeles,2026-06-28,Category 2,605,605,605,380,FIFA Official
+Round of 32,NRG Stadium,Houston,2026-06-29,Category 1,790,790,790,387,FIFA Official
+Round of 16,Lincoln Financial Field,Philadelphia,2026-07-04,Category 1,2715,2715,2715,308,FIFA Official
+Round of 16,Lincoln Financial Field,Philadelphia,2026-07-04,Category 3,745,745,745,280,FIFA Official
+Quarterfinals,SoFi Stadium,Los Angeles,2026-07-10,Category 1,3710,3710,3710,330,FIFA Official
+Quarterfinals,SoFi Stadium,Los Angeles,2026-07-10,Category 2,2705,2705,2705,290,FIFA Official
+Semifinals,Mercedes-Benz Stadium,Atlanta,2026-07-14,Category 1,3710,3710,3710,224,FIFA Official
+Semifinals,Mercedes-Benz Stadium,Atlanta,2026-07-14,Category 2,2705,2705,2705,200,FIFA Official
+Semifinals,Mercedes-Benz Stadium,Atlanta,2026-07-14,Front Category 1,11130,11130,11130,50,FIFA Official
+Final,MetLife Stadium,New York,2026-07-19,Category 1,8000,8000,8000,249,FIFA Official
+Final,MetLife Stadium,New York,2026-07-19,Front Category 1,32179,32179,32179,10,FIFA Official
