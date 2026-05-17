@@ -1,0 +1,17 @@
+city,median_income,source
+Los Angeles,76244,US Census ACS 2022
+New York/New Jersey,76607,US Census ACS 2022
+Miami,54858,US Census ACS 2022
+Dallas,63985,US Census ACS 2022
+Houston,60440,US Census ACS 2022
+Seattle,116068,US Census ACS 2022
+Atlanta,77655,US Census ACS 2022
+Boston,89212,US Census ACS 2022
+Philadelphia,57537,US Census ACS 2022
+Kansas City,65256,US Census ACS 2022
+San Francisco,136689,US Census ACS 2022
+Toronto,47580,Statistics Canada 2021
+Vancouver,46620,Statistics Canada 2021
+Mexico City,14200,INEGI Mexico 2020
+Guadalajara,12800,INEGI Mexico 2020
+Monterrey,16400,INEGI Mexico 2020
