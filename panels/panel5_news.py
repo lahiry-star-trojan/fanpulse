@@ -7,10 +7,15 @@ load_dotenv()
 def get_all_news():
     queries = [
         'FIFA World Cup 2026 USA',
-        'FIFA World Cup 2026 tickets prices',
-        'USMNT World Cup 2026',
-        'FIFA World Cup 2026 host cities fans',
-        'FIFA World Cup 2026 Argentina Mexico',
+    'FIFA World Cup 2026 tickets prices',
+    'USMNT World Cup 2026',
+    'FIFA World Cup 2026 host cities fans',
+    'FIFA World Cup 2026 Argentina Mexico',
+    'FIFA World Cup 2026 opening ceremony',
+    'FIFA World Cup 2026 squads roster',
+    'FIFA World Cup 2026 schedule groups',
+    'World Cup 2026 fan experience',
+    'FIFA 2026 broadcast TV streaming',
     ]
     all_news = []
     seen_titles = set()
