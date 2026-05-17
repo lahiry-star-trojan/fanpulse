@@ -1,25 +1,416 @@
-title,venue,city,date,category,lowest_price,avg_price,median_price,listings,source
-United States vs Paraguay,SoFi Stadium,Los Angeles,2026-06-12,Category 3,1120,1530,1040,477,FIFA Official
-United States vs Paraguay,SoFi Stadium,Los Angeles,2026-06-12,Category 2,1940,1940,1940,280,FIFA Official
-United States vs Paraguay,SoFi Stadium,Los Angeles,2026-06-12,Category 1,2735,2735,2735,150,FIFA Official
-Brazil vs Morocco,MetLife Stadium,New York,2026-06-13,Category 3,1120,1120,1120,240,FIFA Official
-Brazil vs Morocco,MetLife Stadium,New York,2026-06-13,Category 2,1940,1940,1940,180,FIFA Official
-Brazil vs Morocco,MetLife Stadium,New York,2026-06-13,Category 1,2735,2735,2735,120,FIFA Official
-Netherlands vs Japan,AT&T Stadium,Dallas,2026-06-14,Category 3,1120,1120,1120,255,FIFA Official
-England vs Croatia,AT&T Stadium,Dallas,2026-06-17,Category 2,1940,1940,1940,282,FIFA Official
-England vs Croatia,AT&T Stadium,Dallas,2026-06-17,Category 1,2735,2735,2735,150,FIFA Official
-Portugal vs DR Congo,NRG Stadium,Houston,2026-06-17,Category 3,1120,1120,1120,391,FIFA Official
-France vs Senegal,MetLife Stadium,New York,2026-06-16,Category 2,1940,1940,1940,239,FIFA Official
-United States vs Australia,Lumen Field,Seattle,2026-06-19,Category 1,2735,2735,2735,325,FIFA Official
-Round of 32,SoFi Stadium,Los Angeles,2026-06-28,Category 1,790,790,790,410,FIFA Official
-Round of 32,SoFi Stadium,Los Angeles,2026-06-28,Category 2,605,605,605,380,FIFA Official
-Round of 32,NRG Stadium,Houston,2026-06-29,Category 1,790,790,790,387,FIFA Official
-Round of 16,Lincoln Financial Field,Philadelphia,2026-07-04,Category 1,2715,2715,2715,308,FIFA Official
-Round of 16,Lincoln Financial Field,Philadelphia,2026-07-04,Category 3,745,745,745,280,FIFA Official
-Quarterfinals,SoFi Stadium,Los Angeles,2026-07-10,Category 1,3710,3710,3710,330,FIFA Official
-Quarterfinals,SoFi Stadium,Los Angeles,2026-07-10,Category 2,2705,2705,2705,290,FIFA Official
-Semifinals,Mercedes-Benz Stadium,Atlanta,2026-07-14,Category 1,3710,3710,3710,224,FIFA Official
-Semifinals,Mercedes-Benz Stadium,Atlanta,2026-07-14,Category 2,2705,2705,2705,200,FIFA Official
-Semifinals,Mercedes-Benz Stadium,Atlanta,2026-07-14,Front Category 1,11130,11130,11130,50,FIFA Official
-Final,MetLife Stadium,New York,2026-07-19,Category 1,8000,8000,8000,249,FIFA Official
-Final,MetLife Stadium,New York,2026-07-19,Front Category 1,32179,32179,32179,10,FIFA Official
+title,venue,city,date,stage,category,lowest_price,avg_price,median_price,listings,source
+Mexico vs South Africa,Estadio Azteca,Mexico City,2026-06-11,Group Stage,Category 3,605,605,605,440,FIFA Official
+Mexico vs South Africa,Estadio Azteca,Mexico City,2026-06-11,Group Stage,Category 2,1120,1120,1120,440,FIFA Official
+Mexico vs South Africa,Estadio Azteca,Mexico City,2026-06-11,Group Stage,Category 1,1940,1940,1940,440,FIFA Official
+Mexico vs South Africa,Estadio Azteca,Mexico City,2026-06-11,Group Stage,Front Category,2735,2735,2735,440,FIFA Official
+South Korea vs Winner UEFA Playoff D,Estadio Akron,Guadalajara,2026-06-12,Group Stage,Category 3,605,605,605,440,FIFA Official
+South Korea vs Winner UEFA Playoff D,Estadio Akron,Guadalajara,2026-06-12,Group Stage,Category 2,1120,1120,1120,440,FIFA Official
+South Korea vs Winner UEFA Playoff D,Estadio Akron,Guadalajara,2026-06-12,Group Stage,Category 1,1940,1940,1940,440,FIFA Official
+South Korea vs Winner UEFA Playoff D,Estadio Akron,Guadalajara,2026-06-12,Group Stage,Front Category,2735,2735,2735,440,FIFA Official
+Canada vs Winner UEFA Playoff A,BMO Field,Toronto,2026-06-12,Group Stage,Category 3,605,605,605,440,FIFA Official
+Canada vs Winner UEFA Playoff A,BMO Field,Toronto,2026-06-12,Group Stage,Category 2,1120,1120,1120,440,FIFA Official
+Canada vs Winner UEFA Playoff A,BMO Field,Toronto,2026-06-12,Group Stage,Category 1,1940,1940,1940,440,FIFA Official
+Canada vs Winner UEFA Playoff A,BMO Field,Toronto,2026-06-12,Group Stage,Front Category,2735,2735,2735,440,FIFA Official
+USA vs Paraguay,SoFi Stadium,Los Angeles,2026-06-13,Group Stage,Category 3,605,605,605,440,FIFA Official
+USA vs Paraguay,SoFi Stadium,Los Angeles,2026-06-13,Group Stage,Category 2,1120,1120,1120,440,FIFA Official
+USA vs Paraguay,SoFi Stadium,Los Angeles,2026-06-13,Group Stage,Category 1,1940,1940,1940,440,FIFA Official
+USA vs Paraguay,SoFi Stadium,Los Angeles,2026-06-13,Group Stage,Front Category,2735,2735,2735,440,FIFA Official
+Qatar vs Switzerland,Levi's Stadium,San Francisco Bay Area,2026-06-13,Group Stage,Category 3,605,605,605,440,FIFA Official
+Qatar vs Switzerland,Levi's Stadium,San Francisco Bay Area,2026-06-13,Group Stage,Category 2,1120,1120,1120,440,FIFA Official
+Qatar vs Switzerland,Levi's Stadium,San Francisco Bay Area,2026-06-13,Group Stage,Category 1,1940,1940,1940,440,FIFA Official
+Qatar vs Switzerland,Levi's Stadium,San Francisco Bay Area,2026-06-13,Group Stage,Front Category,2735,2735,2735,440,FIFA Official
+Brazil vs Morocco,MetLife Stadium,New York/New Jersey,2026-06-13,Group Stage,Category 3,605,605,605,440,FIFA Official
+Brazil vs Morocco,MetLife Stadium,New York/New Jersey,2026-06-13,Group Stage,Category 2,1120,1120,1120,440,FIFA Official
+Brazil vs Morocco,MetLife Stadium,New York/New Jersey,2026-06-13,Group Stage,Category 1,1940,1940,1940,440,FIFA Official
+Brazil vs Morocco,MetLife Stadium,New York/New Jersey,2026-06-13,Group Stage,Front Category,2735,2735,2735,440,FIFA Official
+Haiti vs Scotland,Gillette Stadium,Boston,2026-06-14,Group Stage,Category 3,605,605,605,440,FIFA Official
+Haiti vs Scotland,Gillette Stadium,Boston,2026-06-14,Group Stage,Category 2,1120,1120,1120,440,FIFA Official
+Haiti vs Scotland,Gillette Stadium,Boston,2026-06-14,Group Stage,Category 1,1940,1940,1940,440,FIFA Official
+Haiti vs Scotland,Gillette Stadium,Boston,2026-06-14,Group Stage,Front Category,2735,2735,2735,440,FIFA Official
+Australia vs Winner UEFA Playoff C,BC Place,Vancouver,2026-06-14,Group Stage,Category 3,605,605,605,440,FIFA Official
+Australia vs Winner UEFA Playoff C,BC Place,Vancouver,2026-06-14,Group Stage,Category 2,1120,1120,1120,440,FIFA Official
+Australia vs Winner UEFA Playoff C,BC Place,Vancouver,2026-06-14,Group Stage,Category 1,1940,1940,1940,440,FIFA Official
+Australia vs Winner UEFA Playoff C,BC Place,Vancouver,2026-06-14,Group Stage,Front Category,2735,2735,2735,440,FIFA Official
+Germany vs Curaçao,NRG Stadium,Houston,2026-06-14,Group Stage,Category 3,605,605,605,440,FIFA Official
+Germany vs Curaçao,NRG Stadium,Houston,2026-06-14,Group Stage,Category 2,1120,1120,1120,440,FIFA Official
+Germany vs Curaçao,NRG Stadium,Houston,2026-06-14,Group Stage,Category 1,1940,1940,1940,440,FIFA Official
+Germany vs Curaçao,NRG Stadium,Houston,2026-06-14,Group Stage,Front Category,2735,2735,2735,440,FIFA Official
+Netherlands vs Japan,AT&T Stadium,Dallas,2026-06-14,Group Stage,Category 3,605,605,605,440,FIFA Official
+Netherlands vs Japan,AT&T Stadium,Dallas,2026-06-14,Group Stage,Category 2,1120,1120,1120,440,FIFA Official
+Netherlands vs Japan,AT&T Stadium,Dallas,2026-06-14,Group Stage,Category 1,1940,1940,1940,440,FIFA Official
+Netherlands vs Japan,AT&T Stadium,Dallas,2026-06-14,Group Stage,Front Category,2735,2735,2735,440,FIFA Official
+Côte d'Ivoire vs Ecuador,Lincoln Financial Field,Philadelphia,2026-06-14,Group Stage,Category 3,605,605,605,440,FIFA Official
+Côte d'Ivoire vs Ecuador,Lincoln Financial Field,Philadelphia,2026-06-14,Group Stage,Category 2,1120,1120,1120,440,FIFA Official
+Côte d'Ivoire vs Ecuador,Lincoln Financial Field,Philadelphia,2026-06-14,Group Stage,Category 1,1940,1940,1940,440,FIFA Official
+Côte d'Ivoire vs Ecuador,Lincoln Financial Field,Philadelphia,2026-06-14,Group Stage,Front Category,2735,2735,2735,440,FIFA Official
+Winner UEFA Playoff B vs Tunisia,Estadio BBVA,Monterrey,2026-06-15,Group Stage,Category 3,605,605,605,440,FIFA Official
+Winner UEFA Playoff B vs Tunisia,Estadio BBVA,Monterrey,2026-06-15,Group Stage,Category 2,1120,1120,1120,440,FIFA Official
+Winner UEFA Playoff B vs Tunisia,Estadio BBVA,Monterrey,2026-06-15,Group Stage,Category 1,1940,1940,1940,440,FIFA Official
+Winner UEFA Playoff B vs Tunisia,Estadio BBVA,Monterrey,2026-06-15,Group Stage,Front Category,2735,2735,2735,440,FIFA Official
+Spain vs Cabo Verde,Mercedes-Benz Stadium,Atlanta,2026-06-15,Group Stage,Category 3,605,605,605,440,FIFA Official
+Spain vs Cabo Verde,Mercedes-Benz Stadium,Atlanta,2026-06-15,Group Stage,Category 2,1120,1120,1120,440,FIFA Official
+Spain vs Cabo Verde,Mercedes-Benz Stadium,Atlanta,2026-06-15,Group Stage,Category 1,1940,1940,1940,440,FIFA Official
+Spain vs Cabo Verde,Mercedes-Benz Stadium,Atlanta,2026-06-15,Group Stage,Front Category,2735,2735,2735,440,FIFA Official
+Belgium vs Egypt,Lumen Field,Seattle,2026-06-15,Group Stage,Category 3,605,605,605,440,FIFA Official
+Belgium vs Egypt,Lumen Field,Seattle,2026-06-15,Group Stage,Category 2,1120,1120,1120,440,FIFA Official
+Belgium vs Egypt,Lumen Field,Seattle,2026-06-15,Group Stage,Category 1,1940,1940,1940,440,FIFA Official
+Belgium vs Egypt,Lumen Field,Seattle,2026-06-15,Group Stage,Front Category,2735,2735,2735,440,FIFA Official
+Saudi Arabia vs Uruguay,Hard Rock Stadium,Miami,2026-06-15,Group Stage,Category 3,605,605,605,440,FIFA Official
+Saudi Arabia vs Uruguay,Hard Rock Stadium,Miami,2026-06-15,Group Stage,Category 2,1120,1120,1120,440,FIFA Official
+Saudi Arabia vs Uruguay,Hard Rock Stadium,Miami,2026-06-15,Group Stage,Category 1,1940,1940,1940,440,FIFA Official
+Saudi Arabia vs Uruguay,Hard Rock Stadium,Miami,2026-06-15,Group Stage,Front Category,2735,2735,2735,440,FIFA Official
+IR Iran vs New Zealand,SoFi Stadium,Los Angeles,2026-06-16,Group Stage,Category 3,605,605,605,440,FIFA Official
+IR Iran vs New Zealand,SoFi Stadium,Los Angeles,2026-06-16,Group Stage,Category 2,1120,1120,1120,440,FIFA Official
+IR Iran vs New Zealand,SoFi Stadium,Los Angeles,2026-06-16,Group Stage,Category 1,1940,1940,1940,440,FIFA Official
+IR Iran vs New Zealand,SoFi Stadium,Los Angeles,2026-06-16,Group Stage,Front Category,2735,2735,2735,440,FIFA Official
+France vs Senegal,MetLife Stadium,New York/New Jersey,2026-06-16,Group Stage,Category 3,605,605,605,440,FIFA Official
+France vs Senegal,MetLife Stadium,New York/New Jersey,2026-06-16,Group Stage,Category 2,1120,1120,1120,440,FIFA Official
+France vs Senegal,MetLife Stadium,New York/New Jersey,2026-06-16,Group Stage,Category 1,1940,1940,1940,440,FIFA Official
+France vs Senegal,MetLife Stadium,New York/New Jersey,2026-06-16,Group Stage,Front Category,2735,2735,2735,440,FIFA Official
+Winner FIFA Playoff 2 vs Norway,Gillette Stadium,Boston,2026-06-16,Group Stage,Category 3,605,605,605,440,FIFA Official
+Winner FIFA Playoff 2 vs Norway,Gillette Stadium,Boston,2026-06-16,Group Stage,Category 2,1120,1120,1120,440,FIFA Official
+Winner FIFA Playoff 2 vs Norway,Gillette Stadium,Boston,2026-06-16,Group Stage,Category 1,1940,1940,1940,440,FIFA Official
+Winner FIFA Playoff 2 vs Norway,Gillette Stadium,Boston,2026-06-16,Group Stage,Front Category,2735,2735,2735,440,FIFA Official
+Argentina vs Algeria,Arrowhead Stadium,Kansas City,2026-06-17,Group Stage,Category 3,605,605,605,440,FIFA Official
+Argentina vs Algeria,Arrowhead Stadium,Kansas City,2026-06-17,Group Stage,Category 2,1120,1120,1120,440,FIFA Official
+Argentina vs Algeria,Arrowhead Stadium,Kansas City,2026-06-17,Group Stage,Category 1,1940,1940,1940,440,FIFA Official
+Argentina vs Algeria,Arrowhead Stadium,Kansas City,2026-06-17,Group Stage,Front Category,2735,2735,2735,440,FIFA Official
+Austria vs Jordan,Levi's Stadium,San Francisco Bay Area,2026-06-17,Group Stage,Category 3,605,605,605,440,FIFA Official
+Austria vs Jordan,Levi's Stadium,San Francisco Bay Area,2026-06-17,Group Stage,Category 2,1120,1120,1120,440,FIFA Official
+Austria vs Jordan,Levi's Stadium,San Francisco Bay Area,2026-06-17,Group Stage,Category 1,1940,1940,1940,440,FIFA Official
+Austria vs Jordan,Levi's Stadium,San Francisco Bay Area,2026-06-17,Group Stage,Front Category,2735,2735,2735,440,FIFA Official
+Portugal vs Winner FIFA Playoff 1,NRG Stadium,Houston,2026-06-17,Group Stage,Category 3,605,605,605,440,FIFA Official
+Portugal vs Winner FIFA Playoff 1,NRG Stadium,Houston,2026-06-17,Group Stage,Category 2,1120,1120,1120,440,FIFA Official
+Portugal vs Winner FIFA Playoff 1,NRG Stadium,Houston,2026-06-17,Group Stage,Category 1,1940,1940,1940,440,FIFA Official
+Portugal vs Winner FIFA Playoff 1,NRG Stadium,Houston,2026-06-17,Group Stage,Front Category,2735,2735,2735,440,FIFA Official
+England vs Croatia,AT&T Stadium,Dallas,2026-06-17,Group Stage,Category 3,605,605,605,440,FIFA Official
+England vs Croatia,AT&T Stadium,Dallas,2026-06-17,Group Stage,Category 2,1120,1120,1120,440,FIFA Official
+England vs Croatia,AT&T Stadium,Dallas,2026-06-17,Group Stage,Category 1,1940,1940,1940,440,FIFA Official
+England vs Croatia,AT&T Stadium,Dallas,2026-06-17,Group Stage,Front Category,2735,2735,2735,440,FIFA Official
+Ghana vs Panama,BMO Field,Toronto,2026-06-17,Group Stage,Category 3,605,605,605,440,FIFA Official
+Ghana vs Panama,BMO Field,Toronto,2026-06-17,Group Stage,Category 2,1120,1120,1120,440,FIFA Official
+Ghana vs Panama,BMO Field,Toronto,2026-06-17,Group Stage,Category 1,1940,1940,1940,440,FIFA Official
+Ghana vs Panama,BMO Field,Toronto,2026-06-17,Group Stage,Front Category,2735,2735,2735,440,FIFA Official
+Uzbekistan vs Colombia,Estadio Azteca,Mexico City,2026-06-18,Group Stage,Category 3,605,605,605,440,FIFA Official
+Uzbekistan vs Colombia,Estadio Azteca,Mexico City,2026-06-18,Group Stage,Category 2,1120,1120,1120,440,FIFA Official
+Uzbekistan vs Colombia,Estadio Azteca,Mexico City,2026-06-18,Group Stage,Category 1,1940,1940,1940,440,FIFA Official
+Uzbekistan vs Colombia,Estadio Azteca,Mexico City,2026-06-18,Group Stage,Front Category,2735,2735,2735,440,FIFA Official
+Winner UEFA Playoff D vs South Africa,Mercedes-Benz Stadium,Atlanta,2026-06-18,Group Stage,Category 3,605,605,605,440,FIFA Official
+Winner UEFA Playoff D vs South Africa,Mercedes-Benz Stadium,Atlanta,2026-06-18,Group Stage,Category 2,1120,1120,1120,440,FIFA Official
+Winner UEFA Playoff D vs South Africa,Mercedes-Benz Stadium,Atlanta,2026-06-18,Group Stage,Category 1,1940,1940,1940,440,FIFA Official
+Winner UEFA Playoff D vs South Africa,Mercedes-Benz Stadium,Atlanta,2026-06-18,Group Stage,Front Category,2735,2735,2735,440,FIFA Official
+Switzerland vs Winner UEFA Playoff A,SoFi Stadium,Los Angeles,2026-06-18,Group Stage,Category 3,605,605,605,440,FIFA Official
+Switzerland vs Winner UEFA Playoff A,SoFi Stadium,Los Angeles,2026-06-18,Group Stage,Category 2,1120,1120,1120,440,FIFA Official
+Switzerland vs Winner UEFA Playoff A,SoFi Stadium,Los Angeles,2026-06-18,Group Stage,Category 1,1940,1940,1940,440,FIFA Official
+Switzerland vs Winner UEFA Playoff A,SoFi Stadium,Los Angeles,2026-06-18,Group Stage,Front Category,2735,2735,2735,440,FIFA Official
+Canada vs Qatar,BC Place,Vancouver,2026-06-19,Group Stage,Category 3,605,605,605,440,FIFA Official
+Canada vs Qatar,BC Place,Vancouver,2026-06-19,Group Stage,Category 2,1120,1120,1120,440,FIFA Official
+Canada vs Qatar,BC Place,Vancouver,2026-06-19,Group Stage,Category 1,1940,1940,1940,440,FIFA Official
+Canada vs Qatar,BC Place,Vancouver,2026-06-19,Group Stage,Front Category,2735,2735,2735,440,FIFA Official
+Mexico vs South Korea,Estadio Akron,Guadalajara,2026-06-19,Group Stage,Category 3,605,605,605,440,FIFA Official
+Mexico vs South Korea,Estadio Akron,Guadalajara,2026-06-19,Group Stage,Category 2,1120,1120,1120,440,FIFA Official
+Mexico vs South Korea,Estadio Akron,Guadalajara,2026-06-19,Group Stage,Category 1,1940,1940,1940,440,FIFA Official
+Mexico vs South Korea,Estadio Akron,Guadalajara,2026-06-19,Group Stage,Front Category,2735,2735,2735,440,FIFA Official
+USA vs Australia,Lumen Field,Seattle,2026-06-19,Group Stage,Category 3,605,605,605,440,FIFA Official
+USA vs Australia,Lumen Field,Seattle,2026-06-19,Group Stage,Category 2,1120,1120,1120,440,FIFA Official
+USA vs Australia,Lumen Field,Seattle,2026-06-19,Group Stage,Category 1,1940,1940,1940,440,FIFA Official
+USA vs Australia,Lumen Field,Seattle,2026-06-19,Group Stage,Front Category,2735,2735,2735,440,FIFA Official
+Scotland vs Morocco,Gillette Stadium,Boston,2026-06-19,Group Stage,Category 3,605,605,605,440,FIFA Official
+Scotland vs Morocco,Gillette Stadium,Boston,2026-06-19,Group Stage,Category 2,1120,1120,1120,440,FIFA Official
+Scotland vs Morocco,Gillette Stadium,Boston,2026-06-19,Group Stage,Category 1,1940,1940,1940,440,FIFA Official
+Scotland vs Morocco,Gillette Stadium,Boston,2026-06-19,Group Stage,Front Category,2735,2735,2735,440,FIFA Official
+Brazil vs Haiti,Lincoln Financial Field,Philadelphia,2026-06-20,Group Stage,Category 3,605,605,605,440,FIFA Official
+Brazil vs Haiti,Lincoln Financial Field,Philadelphia,2026-06-20,Group Stage,Category 2,1120,1120,1120,440,FIFA Official
+Brazil vs Haiti,Lincoln Financial Field,Philadelphia,2026-06-20,Group Stage,Category 1,1940,1940,1940,440,FIFA Official
+Brazil vs Haiti,Lincoln Financial Field,Philadelphia,2026-06-20,Group Stage,Front Category,2735,2735,2735,440,FIFA Official
+Winner UEFA Playoff C vs Paraguay,Levi's Stadium,San Francisco Bay Area,2026-06-20,Group Stage,Category 3,605,605,605,440,FIFA Official
+Winner UEFA Playoff C vs Paraguay,Levi's Stadium,San Francisco Bay Area,2026-06-20,Group Stage,Category 2,1120,1120,1120,440,FIFA Official
+Winner UEFA Playoff C vs Paraguay,Levi's Stadium,San Francisco Bay Area,2026-06-20,Group Stage,Category 1,1940,1940,1940,440,FIFA Official
+Winner UEFA Playoff C vs Paraguay,Levi's Stadium,San Francisco Bay Area,2026-06-20,Group Stage,Front Category,2735,2735,2735,440,FIFA Official
+Netherlands vs Winner UEFA Playoff B,NRG Stadium,Houston,2026-06-20,Group Stage,Category 3,605,605,605,440,FIFA Official
+Netherlands vs Winner UEFA Playoff B,NRG Stadium,Houston,2026-06-20,Group Stage,Category 2,1120,1120,1120,440,FIFA Official
+Netherlands vs Winner UEFA Playoff B,NRG Stadium,Houston,2026-06-20,Group Stage,Category 1,1940,1940,1940,440,FIFA Official
+Netherlands vs Winner UEFA Playoff B,NRG Stadium,Houston,2026-06-20,Group Stage,Front Category,2735,2735,2735,440,FIFA Official
+Germany vs Côte d'Ivoire,BMO Field,Toronto,2026-06-20,Group Stage,Category 3,605,605,605,440,FIFA Official
+Germany vs Côte d'Ivoire,BMO Field,Toronto,2026-06-20,Group Stage,Category 2,1120,1120,1120,440,FIFA Official
+Germany vs Côte d'Ivoire,BMO Field,Toronto,2026-06-20,Group Stage,Category 1,1940,1940,1940,440,FIFA Official
+Germany vs Côte d'Ivoire,BMO Field,Toronto,2026-06-20,Group Stage,Front Category,2735,2735,2735,440,FIFA Official
+Ecuador vs Curaçao,Arrowhead Stadium,Kansas City,2026-06-21,Group Stage,Category 3,605,605,605,440,FIFA Official
+Ecuador vs Curaçao,Arrowhead Stadium,Kansas City,2026-06-21,Group Stage,Category 2,1120,1120,1120,440,FIFA Official
+Ecuador vs Curaçao,Arrowhead Stadium,Kansas City,2026-06-21,Group Stage,Category 1,1940,1940,1940,440,FIFA Official
+Ecuador vs Curaçao,Arrowhead Stadium,Kansas City,2026-06-21,Group Stage,Front Category,2735,2735,2735,440,FIFA Official
+Tunisia vs Japan,Estadio BBVA,Monterrey,2026-06-21,Group Stage,Category 3,605,605,605,440,FIFA Official
+Tunisia vs Japan,Estadio BBVA,Monterrey,2026-06-21,Group Stage,Category 2,1120,1120,1120,440,FIFA Official
+Tunisia vs Japan,Estadio BBVA,Monterrey,2026-06-21,Group Stage,Category 1,1940,1940,1940,440,FIFA Official
+Tunisia vs Japan,Estadio BBVA,Monterrey,2026-06-21,Group Stage,Front Category,2735,2735,2735,440,FIFA Official
+Spain vs Saudi Arabia,Mercedes-Benz Stadium,Atlanta,2026-06-21,Group Stage,Category 3,605,605,605,440,FIFA Official
+Spain vs Saudi Arabia,Mercedes-Benz Stadium,Atlanta,2026-06-21,Group Stage,Category 2,1120,1120,1120,440,FIFA Official
+Spain vs Saudi Arabia,Mercedes-Benz Stadium,Atlanta,2026-06-21,Group Stage,Category 1,1940,1940,1940,440,FIFA Official
+Spain vs Saudi Arabia,Mercedes-Benz Stadium,Atlanta,2026-06-21,Group Stage,Front Category,2735,2735,2735,440,FIFA Official
+Belgium vs IR Iran,SoFi Stadium,Los Angeles,2026-06-21,Group Stage,Category 3,605,605,605,440,FIFA Official
+Belgium vs IR Iran,SoFi Stadium,Los Angeles,2026-06-21,Group Stage,Category 2,1120,1120,1120,440,FIFA Official
+Belgium vs IR Iran,SoFi Stadium,Los Angeles,2026-06-21,Group Stage,Category 1,1940,1940,1940,440,FIFA Official
+Belgium vs IR Iran,SoFi Stadium,Los Angeles,2026-06-21,Group Stage,Front Category,2735,2735,2735,440,FIFA Official
+Uruguay vs Cabo Verde,Hard Rock Stadium,Miami,2026-06-21,Group Stage,Category 3,605,605,605,440,FIFA Official
+Uruguay vs Cabo Verde,Hard Rock Stadium,Miami,2026-06-21,Group Stage,Category 2,1120,1120,1120,440,FIFA Official
+Uruguay vs Cabo Verde,Hard Rock Stadium,Miami,2026-06-21,Group Stage,Category 1,1940,1940,1940,440,FIFA Official
+Uruguay vs Cabo Verde,Hard Rock Stadium,Miami,2026-06-21,Group Stage,Front Category,2735,2735,2735,440,FIFA Official
+New Zealand vs Egypt,BC Place,Vancouver,2026-06-22,Group Stage,Category 3,605,605,605,440,FIFA Official
+New Zealand vs Egypt,BC Place,Vancouver,2026-06-22,Group Stage,Category 2,1120,1120,1120,440,FIFA Official
+New Zealand vs Egypt,BC Place,Vancouver,2026-06-22,Group Stage,Category 1,1940,1940,1940,440,FIFA Official
+New Zealand vs Egypt,BC Place,Vancouver,2026-06-22,Group Stage,Front Category,2735,2735,2735,440,FIFA Official
+Argentina vs Austria,AT&T Stadium,Dallas,2026-06-22,Group Stage,Category 3,605,605,605,440,FIFA Official
+Argentina vs Austria,AT&T Stadium,Dallas,2026-06-22,Group Stage,Category 2,1120,1120,1120,440,FIFA Official
+Argentina vs Austria,AT&T Stadium,Dallas,2026-06-22,Group Stage,Category 1,1940,1940,1940,440,FIFA Official
+Argentina vs Austria,AT&T Stadium,Dallas,2026-06-22,Group Stage,Front Category,2735,2735,2735,440,FIFA Official
+France vs Winner FIFA Playoff 2,Lincoln Financial Field,Philadelphia,2026-06-22,Group Stage,Category 3,605,605,605,440,FIFA Official
+France vs Winner FIFA Playoff 2,Lincoln Financial Field,Philadelphia,2026-06-22,Group Stage,Category 2,1120,1120,1120,440,FIFA Official
+France vs Winner FIFA Playoff 2,Lincoln Financial Field,Philadelphia,2026-06-22,Group Stage,Category 1,1940,1940,1940,440,FIFA Official
+France vs Winner FIFA Playoff 2,Lincoln Financial Field,Philadelphia,2026-06-22,Group Stage,Front Category,2735,2735,2735,440,FIFA Official
+Norway vs Senegal,MetLife Stadium,New York/New Jersey,2026-06-23,Group Stage,Category 3,605,605,605,440,FIFA Official
+Norway vs Senegal,MetLife Stadium,New York/New Jersey,2026-06-23,Group Stage,Category 2,1120,1120,1120,440,FIFA Official
+Norway vs Senegal,MetLife Stadium,New York/New Jersey,2026-06-23,Group Stage,Category 1,1940,1940,1940,440,FIFA Official
+Norway vs Senegal,MetLife Stadium,New York/New Jersey,2026-06-23,Group Stage,Front Category,2735,2735,2735,440,FIFA Official
+Jordan vs Algeria,Levi's Stadium,San Francisco Bay Area,2026-06-23,Group Stage,Category 3,605,605,605,440,FIFA Official
+Jordan vs Algeria,Levi's Stadium,San Francisco Bay Area,2026-06-23,Group Stage,Category 2,1120,1120,1120,440,FIFA Official
+Jordan vs Algeria,Levi's Stadium,San Francisco Bay Area,2026-06-23,Group Stage,Category 1,1940,1940,1940,440,FIFA Official
+Jordan vs Algeria,Levi's Stadium,San Francisco Bay Area,2026-06-23,Group Stage,Front Category,2735,2735,2735,440,FIFA Official
+Portugal vs Uzbekistan,NRG Stadium,Houston,2026-06-23,Group Stage,Category 3,605,605,605,440,FIFA Official
+Portugal vs Uzbekistan,NRG Stadium,Houston,2026-06-23,Group Stage,Category 2,1120,1120,1120,440,FIFA Official
+Portugal vs Uzbekistan,NRG Stadium,Houston,2026-06-23,Group Stage,Category 1,1940,1940,1940,440,FIFA Official
+Portugal vs Uzbekistan,NRG Stadium,Houston,2026-06-23,Group Stage,Front Category,2735,2735,2735,440,FIFA Official
+England vs Ghana,Gillette Stadium,Boston,2026-06-23,Group Stage,Category 3,605,605,605,440,FIFA Official
+England vs Ghana,Gillette Stadium,Boston,2026-06-23,Group Stage,Category 2,1120,1120,1120,440,FIFA Official
+England vs Ghana,Gillette Stadium,Boston,2026-06-23,Group Stage,Category 1,1940,1940,1940,440,FIFA Official
+England vs Ghana,Gillette Stadium,Boston,2026-06-23,Group Stage,Front Category,2735,2735,2735,440,FIFA Official
+Panama vs Croatia,BMO Field,Toronto,2026-06-23,Group Stage,Category 3,605,605,605,440,FIFA Official
+Panama vs Croatia,BMO Field,Toronto,2026-06-23,Group Stage,Category 2,1120,1120,1120,440,FIFA Official
+Panama vs Croatia,BMO Field,Toronto,2026-06-23,Group Stage,Category 1,1940,1940,1940,440,FIFA Official
+Panama vs Croatia,BMO Field,Toronto,2026-06-23,Group Stage,Front Category,2735,2735,2735,440,FIFA Official
+Colombia vs Winner FIFA Playoff 1,Estadio Akron,Guadalajara,2026-06-24,Group Stage,Category 3,605,605,605,440,FIFA Official
+Colombia vs Winner FIFA Playoff 1,Estadio Akron,Guadalajara,2026-06-24,Group Stage,Category 2,1120,1120,1120,440,FIFA Official
+Colombia vs Winner FIFA Playoff 1,Estadio Akron,Guadalajara,2026-06-24,Group Stage,Category 1,1940,1940,1940,440,FIFA Official
+Colombia vs Winner FIFA Playoff 1,Estadio Akron,Guadalajara,2026-06-24,Group Stage,Front Category,2735,2735,2735,440,FIFA Official
+Switzerland vs Canada,BC Place,Vancouver,2026-06-24,Group Stage,Category 3,605,605,605,440,FIFA Official
+Switzerland vs Canada,BC Place,Vancouver,2026-06-24,Group Stage,Category 2,1120,1120,1120,440,FIFA Official
+Switzerland vs Canada,BC Place,Vancouver,2026-06-24,Group Stage,Category 1,1940,1940,1940,440,FIFA Official
+Switzerland vs Canada,BC Place,Vancouver,2026-06-24,Group Stage,Front Category,2735,2735,2735,440,FIFA Official
+Winner UEFA Playoff A vs Qatar,Lumen Field,Seattle,2026-06-24,Group Stage,Category 3,605,605,605,440,FIFA Official
+Winner UEFA Playoff A vs Qatar,Lumen Field,Seattle,2026-06-24,Group Stage,Category 2,1120,1120,1120,440,FIFA Official
+Winner UEFA Playoff A vs Qatar,Lumen Field,Seattle,2026-06-24,Group Stage,Category 1,1940,1940,1940,440,FIFA Official
+Winner UEFA Playoff A vs Qatar,Lumen Field,Seattle,2026-06-24,Group Stage,Front Category,2735,2735,2735,440,FIFA Official
+Scotland vs Brazil,Hard Rock Stadium,Miami,2026-06-24,Group Stage,Category 3,605,605,605,440,FIFA Official
+Scotland vs Brazil,Hard Rock Stadium,Miami,2026-06-24,Group Stage,Category 2,1120,1120,1120,440,FIFA Official
+Scotland vs Brazil,Hard Rock Stadium,Miami,2026-06-24,Group Stage,Category 1,1940,1940,1940,440,FIFA Official
+Scotland vs Brazil,Hard Rock Stadium,Miami,2026-06-24,Group Stage,Front Category,2735,2735,2735,440,FIFA Official
+Morocco vs Haiti,Mercedes-Benz Stadium,Atlanta,2026-06-24,Group Stage,Category 3,605,605,605,440,FIFA Official
+Morocco vs Haiti,Mercedes-Benz Stadium,Atlanta,2026-06-24,Group Stage,Category 2,1120,1120,1120,440,FIFA Official
+Morocco vs Haiti,Mercedes-Benz Stadium,Atlanta,2026-06-24,Group Stage,Category 1,1940,1940,1940,440,FIFA Official
+Morocco vs Haiti,Mercedes-Benz Stadium,Atlanta,2026-06-24,Group Stage,Front Category,2735,2735,2735,440,FIFA Official
+Winner UEFA Playoff D vs Mexico,Estadio Azteca,Mexico City,2026-06-25,Group Stage,Category 3,605,605,605,440,FIFA Official
+Winner UEFA Playoff D vs Mexico,Estadio Azteca,Mexico City,2026-06-25,Group Stage,Category 2,1120,1120,1120,440,FIFA Official
+Winner UEFA Playoff D vs Mexico,Estadio Azteca,Mexico City,2026-06-25,Group Stage,Category 1,1940,1940,1940,440,FIFA Official
+Winner UEFA Playoff D vs Mexico,Estadio Azteca,Mexico City,2026-06-25,Group Stage,Front Category,2735,2735,2735,440,FIFA Official
+South Africa vs South Korea,Estadio BBVA,Monterrey,2026-06-25,Group Stage,Category 3,605,605,605,440,FIFA Official
+South Africa vs South Korea,Estadio BBVA,Monterrey,2026-06-25,Group Stage,Category 2,1120,1120,1120,440,FIFA Official
+South Africa vs South Korea,Estadio BBVA,Monterrey,2026-06-25,Group Stage,Category 1,1940,1940,1940,440,FIFA Official
+South Africa vs South Korea,Estadio BBVA,Monterrey,2026-06-25,Group Stage,Front Category,2735,2735,2735,440,FIFA Official
+Curaçao vs Côte d'Ivoire,Lincoln Financial Field,Philadelphia,2026-06-25,Group Stage,Category 3,605,605,605,440,FIFA Official
+Curaçao vs Côte d'Ivoire,Lincoln Financial Field,Philadelphia,2026-06-25,Group Stage,Category 2,1120,1120,1120,440,FIFA Official
+Curaçao vs Côte d'Ivoire,Lincoln Financial Field,Philadelphia,2026-06-25,Group Stage,Category 1,1940,1940,1940,440,FIFA Official
+Curaçao vs Côte d'Ivoire,Lincoln Financial Field,Philadelphia,2026-06-25,Group Stage,Front Category,2735,2735,2735,440,FIFA Official
+Ecuador vs Germany,MetLife Stadium,New York/New Jersey,2026-06-25,Group Stage,Category 3,605,605,605,440,FIFA Official
+Ecuador vs Germany,MetLife Stadium,New York/New Jersey,2026-06-25,Group Stage,Category 2,1120,1120,1120,440,FIFA Official
+Ecuador vs Germany,MetLife Stadium,New York/New Jersey,2026-06-25,Group Stage,Category 1,1940,1940,1940,440,FIFA Official
+Ecuador vs Germany,MetLife Stadium,New York/New Jersey,2026-06-25,Group Stage,Front Category,2735,2735,2735,440,FIFA Official
+Japan vs Winner UEFA Playoff B,AT&T Stadium,Dallas,2026-06-26,Group Stage,Category 3,605,605,605,440,FIFA Official
+Japan vs Winner UEFA Playoff B,AT&T Stadium,Dallas,2026-06-26,Group Stage,Category 2,1120,1120,1120,440,FIFA Official
+Japan vs Winner UEFA Playoff B,AT&T Stadium,Dallas,2026-06-26,Group Stage,Category 1,1940,1940,1940,440,FIFA Official
+Japan vs Winner UEFA Playoff B,AT&T Stadium,Dallas,2026-06-26,Group Stage,Front Category,2735,2735,2735,440,FIFA Official
+Tunisia vs Netherlands,Arrowhead Stadium,Kansas City,2026-06-26,Group Stage,Category 3,605,605,605,440,FIFA Official
+Tunisia vs Netherlands,Arrowhead Stadium,Kansas City,2026-06-26,Group Stage,Category 2,1120,1120,1120,440,FIFA Official
+Tunisia vs Netherlands,Arrowhead Stadium,Kansas City,2026-06-26,Group Stage,Category 1,1940,1940,1940,440,FIFA Official
+Tunisia vs Netherlands,Arrowhead Stadium,Kansas City,2026-06-26,Group Stage,Front Category,2735,2735,2735,440,FIFA Official
+Winner UEFA Playoff C vs USA,SoFi Stadium,Los Angeles,2026-06-26,Group Stage,Category 3,605,605,605,440,FIFA Official
+Winner UEFA Playoff C vs USA,SoFi Stadium,Los Angeles,2026-06-26,Group Stage,Category 2,1120,1120,1120,440,FIFA Official
+Winner UEFA Playoff C vs USA,SoFi Stadium,Los Angeles,2026-06-26,Group Stage,Category 1,1940,1940,1940,440,FIFA Official
+Winner UEFA Playoff C vs USA,SoFi Stadium,Los Angeles,2026-06-26,Group Stage,Front Category,2735,2735,2735,440,FIFA Official
+Paraguay vs Australia,Levi's Stadium,San Francisco Bay Area,2026-06-26,Group Stage,Category 3,605,605,605,440,FIFA Official
+Paraguay vs Australia,Levi's Stadium,San Francisco Bay Area,2026-06-26,Group Stage,Category 2,1120,1120,1120,440,FIFA Official
+Paraguay vs Australia,Levi's Stadium,San Francisco Bay Area,2026-06-26,Group Stage,Category 1,1940,1940,1940,440,FIFA Official
+Paraguay vs Australia,Levi's Stadium,San Francisco Bay Area,2026-06-26,Group Stage,Front Category,2735,2735,2735,440,FIFA Official
+Norway vs France,Gillette Stadium,Boston,2026-06-26,Group Stage,Category 3,605,605,605,440,FIFA Official
+Norway vs France,Gillette Stadium,Boston,2026-06-26,Group Stage,Category 2,1120,1120,1120,440,FIFA Official
+Norway vs France,Gillette Stadium,Boston,2026-06-26,Group Stage,Category 1,1940,1940,1940,440,FIFA Official
+Norway vs France,Gillette Stadium,Boston,2026-06-26,Group Stage,Front Category,2735,2735,2735,440,FIFA Official
+Senegal vs Winner FIFA Playoff 2,BMO Field,Toronto,2026-06-26,Group Stage,Category 3,605,605,605,440,FIFA Official
+Senegal vs Winner FIFA Playoff 2,BMO Field,Toronto,2026-06-26,Group Stage,Category 2,1120,1120,1120,440,FIFA Official
+Senegal vs Winner FIFA Playoff 2,BMO Field,Toronto,2026-06-26,Group Stage,Category 1,1940,1940,1940,440,FIFA Official
+Senegal vs Winner FIFA Playoff 2,BMO Field,Toronto,2026-06-26,Group Stage,Front Category,2735,2735,2735,440,FIFA Official
+Cabo Verde vs Saudi Arabia,NRG Stadium,Houston,2026-06-27,Group Stage,Category 3,605,605,605,440,FIFA Official
+Cabo Verde vs Saudi Arabia,NRG Stadium,Houston,2026-06-27,Group Stage,Category 2,1120,1120,1120,440,FIFA Official
+Cabo Verde vs Saudi Arabia,NRG Stadium,Houston,2026-06-27,Group Stage,Category 1,1940,1940,1940,440,FIFA Official
+Cabo Verde vs Saudi Arabia,NRG Stadium,Houston,2026-06-27,Group Stage,Front Category,2735,2735,2735,440,FIFA Official
+Uruguay vs Spain,Estadio Akron,Guadalajara,2026-06-27,Group Stage,Category 3,605,605,605,440,FIFA Official
+Uruguay vs Spain,Estadio Akron,Guadalajara,2026-06-27,Group Stage,Category 2,1120,1120,1120,440,FIFA Official
+Uruguay vs Spain,Estadio Akron,Guadalajara,2026-06-27,Group Stage,Category 1,1940,1940,1940,440,FIFA Official
+Uruguay vs Spain,Estadio Akron,Guadalajara,2026-06-27,Group Stage,Front Category,2735,2735,2735,440,FIFA Official
+Egypt vs IR Iran,Lumen Field,Seattle,2026-06-27,Group Stage,Category 3,605,605,605,440,FIFA Official
+Egypt vs IR Iran,Lumen Field,Seattle,2026-06-27,Group Stage,Category 2,1120,1120,1120,440,FIFA Official
+Egypt vs IR Iran,Lumen Field,Seattle,2026-06-27,Group Stage,Category 1,1940,1940,1940,440,FIFA Official
+Egypt vs IR Iran,Lumen Field,Seattle,2026-06-27,Group Stage,Front Category,2735,2735,2735,440,FIFA Official
+New Zealand vs Belgium,BC Place,Vancouver,2026-06-27,Group Stage,Category 3,605,605,605,440,FIFA Official
+New Zealand vs Belgium,BC Place,Vancouver,2026-06-27,Group Stage,Category 2,1120,1120,1120,440,FIFA Official
+New Zealand vs Belgium,BC Place,Vancouver,2026-06-27,Group Stage,Category 1,1940,1940,1940,440,FIFA Official
+New Zealand vs Belgium,BC Place,Vancouver,2026-06-27,Group Stage,Front Category,2735,2735,2735,440,FIFA Official
+Panama vs England,MetLife Stadium,New York/New Jersey,2026-06-27,Group Stage,Category 3,605,605,605,440,FIFA Official
+Panama vs England,MetLife Stadium,New York/New Jersey,2026-06-27,Group Stage,Category 2,1120,1120,1120,440,FIFA Official
+Panama vs England,MetLife Stadium,New York/New Jersey,2026-06-27,Group Stage,Category 1,1940,1940,1940,440,FIFA Official
+Panama vs England,MetLife Stadium,New York/New Jersey,2026-06-27,Group Stage,Front Category,2735,2735,2735,440,FIFA Official
+Croatia vs Ghana,Lincoln Financial Field,Philadelphia,2026-06-27,Group Stage,Category 3,605,605,605,440,FIFA Official
+Croatia vs Ghana,Lincoln Financial Field,Philadelphia,2026-06-27,Group Stage,Category 2,1120,1120,1120,440,FIFA Official
+Croatia vs Ghana,Lincoln Financial Field,Philadelphia,2026-06-27,Group Stage,Category 1,1940,1940,1940,440,FIFA Official
+Croatia vs Ghana,Lincoln Financial Field,Philadelphia,2026-06-27,Group Stage,Front Category,2735,2735,2735,440,FIFA Official
+Colombia vs Portugal,Hard Rock Stadium,Miami,2026-06-27,Group Stage,Category 3,605,605,605,440,FIFA Official
+Colombia vs Portugal,Hard Rock Stadium,Miami,2026-06-27,Group Stage,Category 2,1120,1120,1120,440,FIFA Official
+Colombia vs Portugal,Hard Rock Stadium,Miami,2026-06-27,Group Stage,Category 1,1940,1940,1940,440,FIFA Official
+Colombia vs Portugal,Hard Rock Stadium,Miami,2026-06-27,Group Stage,Front Category,2735,2735,2735,440,FIFA Official
+Winner FIFA Playoff 1 vs Uzbekistan,Mercedes-Benz Stadium,Atlanta,2026-06-27,Group Stage,Category 3,605,605,605,440,FIFA Official
+Winner FIFA Playoff 1 vs Uzbekistan,Mercedes-Benz Stadium,Atlanta,2026-06-27,Group Stage,Category 2,1120,1120,1120,440,FIFA Official
+Winner FIFA Playoff 1 vs Uzbekistan,Mercedes-Benz Stadium,Atlanta,2026-06-27,Group Stage,Category 1,1940,1940,1940,440,FIFA Official
+Winner FIFA Playoff 1 vs Uzbekistan,Mercedes-Benz Stadium,Atlanta,2026-06-27,Group Stage,Front Category,2735,2735,2735,440,FIFA Official
+Algeria vs Austria,Arrowhead Stadium,Kansas City,2026-06-28,Group Stage,Category 3,605,605,605,440,FIFA Official
+Algeria vs Austria,Arrowhead Stadium,Kansas City,2026-06-28,Group Stage,Category 2,1120,1120,1120,440,FIFA Official
+Algeria vs Austria,Arrowhead Stadium,Kansas City,2026-06-28,Group Stage,Category 1,1940,1940,1940,440,FIFA Official
+Algeria vs Austria,Arrowhead Stadium,Kansas City,2026-06-28,Group Stage,Front Category,2735,2735,2735,440,FIFA Official
+Jordan vs Argentina,AT&T Stadium,Dallas,2026-06-28,Group Stage,Category 3,605,605,605,440,FIFA Official
+Jordan vs Argentina,AT&T Stadium,Dallas,2026-06-28,Group Stage,Category 2,1120,1120,1120,440,FIFA Official
+Jordan vs Argentina,AT&T Stadium,Dallas,2026-06-28,Group Stage,Category 1,1940,1940,1940,440,FIFA Official
+Jordan vs Argentina,AT&T Stadium,Dallas,2026-06-28,Group Stage,Front Category,2735,2735,2735,440,FIFA Official
+2A vs 2B,SoFi Stadium,Los Angeles,2026-06-28,Round of 32,Category 3,790,790,790,380,FIFA Official
+2A vs 2B,SoFi Stadium,Los Angeles,2026-06-28,Round of 32,Category 2,1540,1540,1540,380,FIFA Official
+2A vs 2B,SoFi Stadium,Los Angeles,2026-06-28,Round of 32,Category 1,2370,2370,2370,380,FIFA Official
+2A vs 2B,SoFi Stadium,Los Angeles,2026-06-28,Round of 32,Front Category,3160,3160,3160,380,FIFA Official
+1C vs 2F,NRG Stadium,Houston,2026-06-29,Round of 32,Category 3,790,790,790,380,FIFA Official
+1C vs 2F,NRG Stadium,Houston,2026-06-29,Round of 32,Category 2,1540,1540,1540,380,FIFA Official
+1C vs 2F,NRG Stadium,Houston,2026-06-29,Round of 32,Category 1,2370,2370,2370,380,FIFA Official
+1C vs 2F,NRG Stadium,Houston,2026-06-29,Round of 32,Front Category,3160,3160,3160,380,FIFA Official
+1E vs 3ABCDF,Gillette Stadium,Boston,2026-06-29,Round of 32,Category 3,790,790,790,380,FIFA Official
+1E vs 3ABCDF,Gillette Stadium,Boston,2026-06-29,Round of 32,Category 2,1540,1540,1540,380,FIFA Official
+1E vs 3ABCDF,Gillette Stadium,Boston,2026-06-29,Round of 32,Category 1,2370,2370,2370,380,FIFA Official
+1E vs 3ABCDF,Gillette Stadium,Boston,2026-06-29,Round of 32,Front Category,3160,3160,3160,380,FIFA Official
+1F vs 2C,Estadio BBVA,Monterrey,2026-06-30,Round of 32,Category 3,790,790,790,380,FIFA Official
+1F vs 2C,Estadio BBVA,Monterrey,2026-06-30,Round of 32,Category 2,1540,1540,1540,380,FIFA Official
+1F vs 2C,Estadio BBVA,Monterrey,2026-06-30,Round of 32,Category 1,2370,2370,2370,380,FIFA Official
+1F vs 2C,Estadio BBVA,Monterrey,2026-06-30,Round of 32,Front Category,3160,3160,3160,380,FIFA Official
+2E vs 2I,AT&T Stadium,Dallas,2026-06-30,Round of 32,Category 3,790,790,790,380,FIFA Official
+2E vs 2I,AT&T Stadium,Dallas,2026-06-30,Round of 32,Category 2,1540,1540,1540,380,FIFA Official
+2E vs 2I,AT&T Stadium,Dallas,2026-06-30,Round of 32,Category 1,2370,2370,2370,380,FIFA Official
+2E vs 2I,AT&T Stadium,Dallas,2026-06-30,Round of 32,Front Category,3160,3160,3160,380,FIFA Official
+1I vs 3CDFGH,MetLife Stadium,New York/New Jersey,2026-06-30,Round of 32,Category 3,790,790,790,380,FIFA Official
+1I vs 3CDFGH,MetLife Stadium,New York/New Jersey,2026-06-30,Round of 32,Category 2,1540,1540,1540,380,FIFA Official
+1I vs 3CDFGH,MetLife Stadium,New York/New Jersey,2026-06-30,Round of 32,Category 1,2370,2370,2370,380,FIFA Official
+1I vs 3CDFGH,MetLife Stadium,New York/New Jersey,2026-06-30,Round of 32,Front Category,3160,3160,3160,380,FIFA Official
+1A vs 3CEFHI,Estadio Azteca,Mexico City,2026-07-01,Round of 32,Category 3,790,790,790,380,FIFA Official
+1A vs 3CEFHI,Estadio Azteca,Mexico City,2026-07-01,Round of 32,Category 2,1540,1540,1540,380,FIFA Official
+1A vs 3CEFHI,Estadio Azteca,Mexico City,2026-07-01,Round of 32,Category 1,2370,2370,2370,380,FIFA Official
+1A vs 3CEFHI,Estadio Azteca,Mexico City,2026-07-01,Round of 32,Front Category,3160,3160,3160,380,FIFA Official
+1L vs 3EHIJK,Mercedes-Benz Stadium,Atlanta,2026-07-01,Round of 32,Category 3,790,790,790,380,FIFA Official
+1L vs 3EHIJK,Mercedes-Benz Stadium,Atlanta,2026-07-01,Round of 32,Category 2,1540,1540,1540,380,FIFA Official
+1L vs 3EHIJK,Mercedes-Benz Stadium,Atlanta,2026-07-01,Round of 32,Category 1,2370,2370,2370,380,FIFA Official
+1L vs 3EHIJK,Mercedes-Benz Stadium,Atlanta,2026-07-01,Round of 32,Front Category,3160,3160,3160,380,FIFA Official
+1G vs 3AEHIJ,Lumen Field,Seattle,2026-07-01,Round of 32,Category 3,790,790,790,380,FIFA Official
+1G vs 3AEHIJ,Lumen Field,Seattle,2026-07-01,Round of 32,Category 2,1540,1540,1540,380,FIFA Official
+1G vs 3AEHIJ,Lumen Field,Seattle,2026-07-01,Round of 32,Category 1,2370,2370,2370,380,FIFA Official
+1G vs 3AEHIJ,Lumen Field,Seattle,2026-07-01,Round of 32,Front Category,3160,3160,3160,380,FIFA Official
+1D vs 3BEFIJ,Levi's Stadium,San Francisco Bay Area,2026-07-02,Round of 32,Category 3,790,790,790,380,FIFA Official
+1D vs 3BEFIJ,Levi's Stadium,San Francisco Bay Area,2026-07-02,Round of 32,Category 2,1540,1540,1540,380,FIFA Official
+1D vs 3BEFIJ,Levi's Stadium,San Francisco Bay Area,2026-07-02,Round of 32,Category 1,2370,2370,2370,380,FIFA Official
+1D vs 3BEFIJ,Levi's Stadium,San Francisco Bay Area,2026-07-02,Round of 32,Front Category,3160,3160,3160,380,FIFA Official
+1H vs 2J,SoFi Stadium,Los Angeles,2026-07-02,Round of 32,Category 3,790,790,790,380,FIFA Official
+1H vs 2J,SoFi Stadium,Los Angeles,2026-07-02,Round of 32,Category 2,1540,1540,1540,380,FIFA Official
+1H vs 2J,SoFi Stadium,Los Angeles,2026-07-02,Round of 32,Category 1,2370,2370,2370,380,FIFA Official
+1H vs 2J,SoFi Stadium,Los Angeles,2026-07-02,Round of 32,Front Category,3160,3160,3160,380,FIFA Official
+2K vs 2L,BMO Field,Toronto,2026-07-02,Round of 32,Category 3,790,790,790,380,FIFA Official
+2K vs 2L,BMO Field,Toronto,2026-07-02,Round of 32,Category 2,1540,1540,1540,380,FIFA Official
+2K vs 2L,BMO Field,Toronto,2026-07-02,Round of 32,Category 1,2370,2370,2370,380,FIFA Official
+2K vs 2L,BMO Field,Toronto,2026-07-02,Round of 32,Front Category,3160,3160,3160,380,FIFA Official
+1B vs 3EFGIJ,BC Place,Vancouver,2026-07-03,Round of 32,Category 3,790,790,790,380,FIFA Official
+1B vs 3EFGIJ,BC Place,Vancouver,2026-07-03,Round of 32,Category 2,1540,1540,1540,380,FIFA Official
+1B vs 3EFGIJ,BC Place,Vancouver,2026-07-03,Round of 32,Category 1,2370,2370,2370,380,FIFA Official
+1B vs 3EFGIJ,BC Place,Vancouver,2026-07-03,Round of 32,Front Category,3160,3160,3160,380,FIFA Official
+2D vs 2G,AT&T Stadium,Dallas,2026-07-03,Round of 32,Category 3,790,790,790,380,FIFA Official
+2D vs 2G,AT&T Stadium,Dallas,2026-07-03,Round of 32,Category 2,1540,1540,1540,380,FIFA Official
+2D vs 2G,AT&T Stadium,Dallas,2026-07-03,Round of 32,Category 1,2370,2370,2370,380,FIFA Official
+2D vs 2G,AT&T Stadium,Dallas,2026-07-03,Round of 32,Front Category,3160,3160,3160,380,FIFA Official
+1J vs 2H,Hard Rock Stadium,Miami,2026-07-03,Round of 32,Category 3,790,790,790,380,FIFA Official
+1J vs 2H,Hard Rock Stadium,Miami,2026-07-03,Round of 32,Category 2,1540,1540,1540,380,FIFA Official
+1J vs 2H,Hard Rock Stadium,Miami,2026-07-03,Round of 32,Category 1,2370,2370,2370,380,FIFA Official
+1J vs 2H,Hard Rock Stadium,Miami,2026-07-03,Round of 32,Front Category,3160,3160,3160,380,FIFA Official
+1K vs 3DEIJL,Arrowhead Stadium,Kansas City,2026-07-04,Round of 32,Category 3,790,790,790,380,FIFA Official
+1K vs 3DEIJL,Arrowhead Stadium,Kansas City,2026-07-04,Round of 32,Category 2,1540,1540,1540,380,FIFA Official
+1K vs 3DEIJL,Arrowhead Stadium,Kansas City,2026-07-04,Round of 32,Category 1,2370,2370,2370,380,FIFA Official
+1K vs 3DEIJL,Arrowhead Stadium,Kansas City,2026-07-04,Round of 32,Front Category,3160,3160,3160,380,FIFA Official
+W73 vs W75,NRG Stadium,Houston,2026-07-04,Round of 16,Category 3,745,745,745,320,FIFA Official
+W73 vs W75,NRG Stadium,Houston,2026-07-04,Round of 16,Category 2,1490,1490,1490,320,FIFA Official
+W73 vs W75,NRG Stadium,Houston,2026-07-04,Round of 16,Category 1,2715,2715,2715,320,FIFA Official
+W73 vs W75,NRG Stadium,Houston,2026-07-04,Round of 16,Front Category,4530,4530,4530,320,FIFA Official
+W74 vs W77,Lincoln Financial Field,Philadelphia,2026-07-04,Round of 16,Category 3,745,745,745,320,FIFA Official
+W74 vs W77,Lincoln Financial Field,Philadelphia,2026-07-04,Round of 16,Category 2,1490,1490,1490,320,FIFA Official
+W74 vs W77,Lincoln Financial Field,Philadelphia,2026-07-04,Round of 16,Category 1,2715,2715,2715,320,FIFA Official
+W74 vs W77,Lincoln Financial Field,Philadelphia,2026-07-04,Round of 16,Front Category,4530,4530,4530,320,FIFA Official
+W76 vs W78,MetLife Stadium,New York/New Jersey,2026-07-05,Round of 16,Category 3,745,745,745,320,FIFA Official
+W76 vs W78,MetLife Stadium,New York/New Jersey,2026-07-05,Round of 16,Category 2,1490,1490,1490,320,FIFA Official
+W76 vs W78,MetLife Stadium,New York/New Jersey,2026-07-05,Round of 16,Category 1,2715,2715,2715,320,FIFA Official
+W76 vs W78,MetLife Stadium,New York/New Jersey,2026-07-05,Round of 16,Front Category,4530,4530,4530,320,FIFA Official
+W79 vs W80,Estadio Azteca,Mexico City,2026-07-06,Round of 16,Category 3,745,745,745,320,FIFA Official
+W79 vs W80,Estadio Azteca,Mexico City,2026-07-06,Round of 16,Category 2,1490,1490,1490,320,FIFA Official
+W79 vs W80,Estadio Azteca,Mexico City,2026-07-06,Round of 16,Category 1,2715,2715,2715,320,FIFA Official
+W79 vs W80,Estadio Azteca,Mexico City,2026-07-06,Round of 16,Front Category,4530,4530,4530,320,FIFA Official
+W83 vs W84,AT&T Stadium,Dallas,2026-07-06,Round of 16,Category 3,745,745,745,320,FIFA Official
+W83 vs W84,AT&T Stadium,Dallas,2026-07-06,Round of 16,Category 2,1490,1490,1490,320,FIFA Official
+W83 vs W84,AT&T Stadium,Dallas,2026-07-06,Round of 16,Category 1,2715,2715,2715,320,FIFA Official
+W83 vs W84,AT&T Stadium,Dallas,2026-07-06,Round of 16,Front Category,4530,4530,4530,320,FIFA Official
+W81 vs W82,Lumen Field,Seattle,2026-07-07,Round of 16,Category 3,745,745,745,320,FIFA Official
+W81 vs W82,Lumen Field,Seattle,2026-07-07,Round of 16,Category 2,1490,1490,1490,320,FIFA Official
+W81 vs W82,Lumen Field,Seattle,2026-07-07,Round of 16,Category 1,2715,2715,2715,320,FIFA Official
+W81 vs W82,Lumen Field,Seattle,2026-07-07,Round of 16,Front Category,4530,4530,4530,320,FIFA Official
+W86 vs W88,Mercedes-Benz Stadium,Atlanta,2026-07-07,Round of 16,Category 3,745,745,745,320,FIFA Official
+W86 vs W88,Mercedes-Benz Stadium,Atlanta,2026-07-07,Round of 16,Category 2,1490,1490,1490,320,FIFA Official
+W86 vs W88,Mercedes-Benz Stadium,Atlanta,2026-07-07,Round of 16,Category 1,2715,2715,2715,320,FIFA Official
+W86 vs W88,Mercedes-Benz Stadium,Atlanta,2026-07-07,Round of 16,Front Category,4530,4530,4530,320,FIFA Official
+W85 vs W87,BC Place,Vancouver,2026-07-07,Round of 16,Category 3,745,745,745,320,FIFA Official
+W85 vs W87,BC Place,Vancouver,2026-07-07,Round of 16,Category 2,1490,1490,1490,320,FIFA Official
+W85 vs W87,BC Place,Vancouver,2026-07-07,Round of 16,Category 1,2715,2715,2715,320,FIFA Official
+W85 vs W87,BC Place,Vancouver,2026-07-07,Round of 16,Front Category,4530,4530,4530,320,FIFA Official
+W89 vs W90,Gillette Stadium,Boston,2026-07-09,Quarterfinals,Category 3,1120,1120,1120,260,FIFA Official
+W89 vs W90,Gillette Stadium,Boston,2026-07-09,Quarterfinals,Category 2,2705,2705,2705,260,FIFA Official
+W89 vs W90,Gillette Stadium,Boston,2026-07-09,Quarterfinals,Category 1,3710,3710,3710,260,FIFA Official
+W89 vs W90,Gillette Stadium,Boston,2026-07-09,Quarterfinals,Front Category,11130,11130,11130,260,FIFA Official
+W93 vs W94,SoFi Stadium,Los Angeles,2026-07-10,Quarterfinals,Category 3,1120,1120,1120,260,FIFA Official
+W93 vs W94,SoFi Stadium,Los Angeles,2026-07-10,Quarterfinals,Category 2,2705,2705,2705,260,FIFA Official
+W93 vs W94,SoFi Stadium,Los Angeles,2026-07-10,Quarterfinals,Category 1,3710,3710,3710,260,FIFA Official
+W93 vs W94,SoFi Stadium,Los Angeles,2026-07-10,Quarterfinals,Front Category,11130,11130,11130,260,FIFA Official
+W91 vs W92,Hard Rock Stadium,Miami,2026-07-11,Quarterfinals,Category 3,1120,1120,1120,260,FIFA Official
+W91 vs W92,Hard Rock Stadium,Miami,2026-07-11,Quarterfinals,Category 2,2705,2705,2705,260,FIFA Official
+W91 vs W92,Hard Rock Stadium,Miami,2026-07-11,Quarterfinals,Category 1,3710,3710,3710,260,FIFA Official
+W91 vs W92,Hard Rock Stadium,Miami,2026-07-11,Quarterfinals,Front Category,11130,11130,11130,260,FIFA Official
+W95 vs W100,Arrowhead Stadium,Kansas City,2026-07-12,Quarterfinals,Category 3,1120,1120,1120,260,FIFA Official
+W95 vs W100,Arrowhead Stadium,Kansas City,2026-07-12,Quarterfinals,Category 2,2705,2705,2705,260,FIFA Official
+W95 vs W100,Arrowhead Stadium,Kansas City,2026-07-12,Quarterfinals,Category 1,3710,3710,3710,260,FIFA Official
+W95 vs W100,Arrowhead Stadium,Kansas City,2026-07-12,Quarterfinals,Front Category,11130,11130,11130,260,FIFA Official
+W97 vs W98,AT&T Stadium,Dallas,2026-07-14,Semifinals,Category 3,2705,2705,2705,200,FIFA Official
+W97 vs W98,AT&T Stadium,Dallas,2026-07-14,Semifinals,Category 2,3710,3710,3710,200,FIFA Official
+W97 vs W98,AT&T Stadium,Dallas,2026-07-14,Semifinals,Category 1,3710,3710,3710,200,FIFA Official
+W97 vs W98,AT&T Stadium,Dallas,2026-07-14,Semifinals,Front Category,11130,11130,11130,200,FIFA Official
+W99 vs W100,Mercedes-Benz Stadium,Atlanta,2026-07-15,Semifinals,Category 3,2705,2705,2705,200,FIFA Official
+W99 vs W100,Mercedes-Benz Stadium,Atlanta,2026-07-15,Semifinals,Category 2,3710,3710,3710,200,FIFA Official
+W99 vs W100,Mercedes-Benz Stadium,Atlanta,2026-07-15,Semifinals,Category 1,3710,3710,3710,200,FIFA Official
+W99 vs W100,Mercedes-Benz Stadium,Atlanta,2026-07-15,Semifinals,Front Category,11130,11130,11130,200,FIFA Official
+RU101 vs RU102,Hard Rock Stadium,Miami,2026-07-18,Third Place Playoff,Category 3,605,605,605,140,FIFA Official
+RU101 vs RU102,Hard Rock Stadium,Miami,2026-07-18,Third Place Playoff,Category 2,1120,1120,1120,140,FIFA Official
+RU101 vs RU102,Hard Rock Stadium,Miami,2026-07-18,Third Place Playoff,Category 1,1940,1940,1940,140,FIFA Official
+RU101 vs RU102,Hard Rock Stadium,Miami,2026-07-18,Third Place Playoff,Front Category,2735,2735,2735,140,FIFA Official
+W101 vs W102,MetLife Stadium,New York/New Jersey,2026-07-19,Final,Category 2,3000,3000,3000,80,FIFA Official
+W101 vs W102,MetLife Stadium,New York/New Jersey,2026-07-19,Final,Category 1,8000,8000,8000,80,FIFA Official
+W101 vs W102,MetLife Stadium,New York/New Jersey,2026-07-19,Final,Front Category,32179,32179,32179,80,FIFA Official

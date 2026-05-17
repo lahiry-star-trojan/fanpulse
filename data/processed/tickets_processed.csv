@@ -1,14 +1,105 @@
-title,city,date,lowest_price,median_price,avg_price,listings,price_premium,tier
-Final,New York,2026-07-19,8000,20089.5,20089.5,259,5.7459187714512,Hot
-Semifinals,Atlanta,2026-07-14,2705,5848.333333333333,5848.333333333333,474,1.6727170054856402,Above Avg
-Quarterfinals,Los Angeles,2026-07-10,2705,3207.5,3207.5,620,0.9173963741969549,Standard
-United States vs Australia,Seattle,2026-06-19,2735,2735.0,2735.0,325,0.7822538062131478,Standard
-England vs Croatia,Dallas,2026-06-17,1940,2337.5,2337.5,432,0.6685624394966118,Standard
-France vs Senegal,New York,2026-06-16,1940,1940.0,1940.0,239,0.5548710727800756,Standard
-Brazil vs Morocco,New York,2026-06-13,1120,1931.6666666666667,1931.6666666666667,540,0.552487605972601,Standard
-United States vs Paraguay,Los Angeles,2026-06-12,1120,1905.0,2068.3333333333335,907,0.5448605121886825,Standard
-Round of 16,Philadelphia,2026-07-04,745,1730.0,1730.0,588,0.4948077092317169,Standard
-Netherlands vs Japan,Dallas,2026-06-14,1120,1120.0,1120.0,255,0.32033793892457973,Standard
-Portugal vs DR Congo,Houston,2026-06-17,1120,1120.0,1120.0,391,0.32033793892457973,Standard
-Round of 32,Houston,2026-06-29,790,790.0,790.0,387,0.2259526533485875,Standard
-Round of 32,Los Angeles,2026-06-28,605,697.5,697.5,790,0.19949617178561996,Standard
+title,city,date,stage,lowest_price,median_price,avg_price,listings,price_premium,tier
+W101 vs W102,New York/New Jersey,2026-07-19,Final,3000,14393.0,14393.0,240,7.098031870375156,Hot
+W99 vs W100,Atlanta,2026-07-15,Semifinals,2705,5313.75,5313.75,800,2.6205215626489253,Hot
+W97 vs W98,Dallas,2026-07-14,Semifinals,2705,5313.75,5313.75,800,2.6205215626489253,Hot
+W89 vs W90,Boston,2026-07-09,Quarterfinals,1120,4666.25,4666.25,1040,2.3012013628248504,Hot
+W91 vs W92,Miami,2026-07-11,Quarterfinals,1120,4666.25,4666.25,1040,2.3012013628248504,Hot
+W93 vs W94,Los Angeles,2026-07-10,Quarterfinals,1120,4666.25,4666.25,1040,2.3012013628248504,Hot
+W95 vs W100,Kansas City,2026-07-12,Quarterfinals,1120,4666.25,4666.25,1040,2.3012013628248504,Hot
+W86 vs W88,Atlanta,2026-07-07,Round of 16,745,2370.0,2370.0,1280,1.16878590514758,Standard
+W73 vs W75,Houston,2026-07-04,Round of 16,745,2370.0,2370.0,1280,1.16878590514758,Standard
+W74 vs W77,Philadelphia,2026-07-04,Round of 16,745,2370.0,2370.0,1280,1.16878590514758,Standard
+W76 vs W78,New York/New Jersey,2026-07-05,Round of 16,745,2370.0,2370.0,1280,1.16878590514758,Standard
+W79 vs W80,Mexico City,2026-07-06,Round of 16,745,2370.0,2370.0,1280,1.16878590514758,Standard
+W81 vs W82,Seattle,2026-07-07,Round of 16,745,2370.0,2370.0,1280,1.16878590514758,Standard
+W83 vs W84,Dallas,2026-07-06,Round of 16,745,2370.0,2370.0,1280,1.16878590514758,Standard
+W85 vs W87,Vancouver,2026-07-07,Round of 16,745,2370.0,2370.0,1280,1.16878590514758,Standard
+1B vs 3EFGIJ,Vancouver,2026-07-03,Round of 32,790,1965.0,1965.0,1520,0.9690566681919809,Standard
+1A vs 3CEFHI,Mexico City,2026-07-01,Round of 32,790,1965.0,1965.0,1520,0.9690566681919809,Standard
+1K vs 3DEIJL,Kansas City,2026-07-04,Round of 32,790,1965.0,1965.0,1520,0.9690566681919809,Standard
+2A vs 2B,Los Angeles,2026-06-28,Round of 32,790,1965.0,1965.0,1520,0.9690566681919809,Standard
+1G vs 3AEHIJ,Seattle,2026-07-01,Round of 32,790,1965.0,1965.0,1520,0.9690566681919809,Standard
+1H vs 2J,Los Angeles,2026-07-02,Round of 32,790,1965.0,1965.0,1520,0.9690566681919809,Standard
+1I vs 3CDFGH,New York/New Jersey,2026-06-30,Round of 32,790,1965.0,1965.0,1520,0.9690566681919809,Standard
+1J vs 2H,Miami,2026-07-03,Round of 32,790,1965.0,1965.0,1520,0.9690566681919809,Standard
+1D vs 3BEFIJ,San Francisco Bay Area,2026-07-02,Round of 32,790,1965.0,1965.0,1520,0.9690566681919809,Standard
+1C vs 2F,Houston,2026-06-29,Round of 32,790,1965.0,1965.0,1520,0.9690566681919809,Standard
+1L vs 3EHIJK,Atlanta,2026-07-01,Round of 32,790,1965.0,1965.0,1520,0.9690566681919809,Standard
+2D vs 2G,Dallas,2026-07-03,Round of 32,790,1965.0,1965.0,1520,0.9690566681919809,Standard
+1E vs 3ABCDF,Boston,2026-06-29,Round of 32,790,1965.0,1965.0,1520,0.9690566681919809,Standard
+2E vs 2I,Dallas,2026-06-30,Round of 32,790,1965.0,1965.0,1520,0.9690566681919809,Standard
+2K vs 2L,Toronto,2026-07-02,Round of 32,790,1965.0,1965.0,1520,0.9690566681919809,Standard
+1F vs 2C,Monterrey,2026-06-30,Round of 32,790,1965.0,1965.0,1520,0.9690566681919809,Standard
+Senegal vs Winner FIFA Playoff 2,Toronto,2026-06-26,Group Stage,605,1600.0,1600.0,1760,0.7890537756270583,Standard
+South Africa vs South Korea,Monterrey,2026-06-25,Group Stage,605,1600.0,1600.0,1760,0.7890537756270583,Standard
+South Korea vs Winner UEFA Playoff D,Guadalajara,2026-06-12,Group Stage,605,1600.0,1600.0,1760,0.7890537756270583,Standard
+Spain vs Cabo Verde,Atlanta,2026-06-15,Group Stage,605,1600.0,1600.0,1760,0.7890537756270583,Standard
+Spain vs Saudi Arabia,Atlanta,2026-06-21,Group Stage,605,1600.0,1600.0,1760,0.7890537756270583,Standard
+Winner UEFA Playoff C vs USA,Los Angeles,2026-06-26,Group Stage,605,1600.0,1600.0,1760,0.7890537756270583,Standard
+Switzerland vs Winner UEFA Playoff A,Los Angeles,2026-06-18,Group Stage,605,1600.0,1600.0,1760,0.7890537756270583,Standard
+Scotland vs Morocco,Boston,2026-06-19,Group Stage,605,1600.0,1600.0,1760,0.7890537756270583,Standard
+Scotland vs Brazil,Miami,2026-06-24,Group Stage,605,1600.0,1600.0,1760,0.7890537756270583,Standard
+Saudi Arabia vs Uruguay,Miami,2026-06-15,Group Stage,605,1600.0,1600.0,1760,0.7890537756270583,Standard
+RU101 vs RU102,Miami,2026-07-18,Third Place Playoff,605,1600.0,1600.0,560,0.7890537756270583,Standard
+Qatar vs Switzerland,San Francisco Bay Area,2026-06-13,Group Stage,605,1600.0,1600.0,1760,0.7890537756270583,Standard
+Switzerland vs Canada,Vancouver,2026-06-24,Group Stage,605,1600.0,1600.0,1760,0.7890537756270583,Standard
+Uzbekistan vs Colombia,Mexico City,2026-06-18,Group Stage,605,1600.0,1600.0,1760,0.7890537756270583,Standard
+Tunisia vs Japan,Monterrey,2026-06-21,Group Stage,605,1600.0,1600.0,1760,0.7890537756270583,Standard
+Tunisia vs Netherlands,Kansas City,2026-06-26,Group Stage,605,1600.0,1600.0,1760,0.7890537756270583,Standard
+USA vs Australia,Seattle,2026-06-19,Group Stage,605,1600.0,1600.0,1760,0.7890537756270583,Standard
+USA vs Paraguay,Los Angeles,2026-06-13,Group Stage,605,1600.0,1600.0,1760,0.7890537756270583,Standard
+Uruguay vs Cabo Verde,Miami,2026-06-21,Group Stage,605,1600.0,1600.0,1760,0.7890537756270583,Standard
+Uruguay vs Spain,Guadalajara,2026-06-27,Group Stage,605,1600.0,1600.0,1760,0.7890537756270583,Standard
+Winner UEFA Playoff C vs Paraguay,San Francisco Bay Area,2026-06-20,Group Stage,605,1600.0,1600.0,1760,0.7890537756270583,Standard
+Portugal vs Uzbekistan,Houston,2026-06-23,Group Stage,605,1600.0,1600.0,1760,0.7890537756270583,Standard
+Winner UEFA Playoff D vs Mexico,Mexico City,2026-06-25,Group Stage,605,1600.0,1600.0,1760,0.7890537756270583,Standard
+Winner FIFA Playoff 1 vs Uzbekistan,Atlanta,2026-06-27,Group Stage,605,1600.0,1600.0,1760,0.7890537756270583,Standard
+Winner FIFA Playoff 2 vs Norway,Boston,2026-06-16,Group Stage,605,1600.0,1600.0,1760,0.7890537756270583,Standard
+Winner UEFA Playoff A vs Qatar,Seattle,2026-06-24,Group Stage,605,1600.0,1600.0,1760,0.7890537756270583,Standard
+Winner UEFA Playoff B vs Tunisia,Monterrey,2026-06-15,Group Stage,605,1600.0,1600.0,1760,0.7890537756270583,Standard
+Portugal vs Winner FIFA Playoff 1,Houston,2026-06-17,Group Stage,605,1600.0,1600.0,1760,0.7890537756270583,Standard
+Netherlands vs Winner UEFA Playoff B,Houston,2026-06-20,Group Stage,605,1600.0,1600.0,1760,0.7890537756270583,Standard
+Paraguay vs Australia,San Francisco Bay Area,2026-06-26,Group Stage,605,1600.0,1600.0,1760,0.7890537756270583,Standard
+Panama vs England,New York/New Jersey,2026-06-27,Group Stage,605,1600.0,1600.0,1760,0.7890537756270583,Standard
+Ecuador vs Germany,New York/New Jersey,2026-06-25,Group Stage,605,1600.0,1600.0,1760,0.7890537756270583,Standard
+Ecuador vs Curaçao,Kansas City,2026-06-21,Group Stage,605,1600.0,1600.0,1760,0.7890537756270583,Standard
+Côte d'Ivoire vs Ecuador,Philadelphia,2026-06-14,Group Stage,605,1600.0,1600.0,1760,0.7890537756270583,Standard
+Curaçao vs Côte d'Ivoire,Philadelphia,2026-06-25,Group Stage,605,1600.0,1600.0,1760,0.7890537756270583,Standard
+Croatia vs Ghana,Philadelphia,2026-06-27,Group Stage,605,1600.0,1600.0,1760,0.7890537756270583,Standard
+Colombia vs Winner FIFA Playoff 1,Guadalajara,2026-06-24,Group Stage,605,1600.0,1600.0,1760,0.7890537756270583,Standard
+Colombia vs Portugal,Miami,2026-06-27,Group Stage,605,1600.0,1600.0,1760,0.7890537756270583,Standard
+Canada vs Winner UEFA Playoff A,Toronto,2026-06-12,Group Stage,605,1600.0,1600.0,1760,0.7890537756270583,Standard
+Canada vs Qatar,Vancouver,2026-06-19,Group Stage,605,1600.0,1600.0,1760,0.7890537756270583,Standard
+Cabo Verde vs Saudi Arabia,Houston,2026-06-27,Group Stage,605,1600.0,1600.0,1760,0.7890537756270583,Standard
+Brazil vs Morocco,New York/New Jersey,2026-06-13,Group Stage,605,1600.0,1600.0,1760,0.7890537756270583,Standard
+Brazil vs Haiti,Philadelphia,2026-06-20,Group Stage,605,1600.0,1600.0,1760,0.7890537756270583,Standard
+Belgium vs IR Iran,Los Angeles,2026-06-21,Group Stage,605,1600.0,1600.0,1760,0.7890537756270583,Standard
+Belgium vs Egypt,Seattle,2026-06-15,Group Stage,605,1600.0,1600.0,1760,0.7890537756270583,Standard
+Austria vs Jordan,San Francisco Bay Area,2026-06-17,Group Stage,605,1600.0,1600.0,1760,0.7890537756270583,Standard
+Australia vs Winner UEFA Playoff C,Vancouver,2026-06-14,Group Stage,605,1600.0,1600.0,1760,0.7890537756270583,Standard
+Argentina vs Austria,Dallas,2026-06-22,Group Stage,605,1600.0,1600.0,1760,0.7890537756270583,Standard
+Argentina vs Algeria,Kansas City,2026-06-17,Group Stage,605,1600.0,1600.0,1760,0.7890537756270583,Standard
+Algeria vs Austria,Kansas City,2026-06-28,Group Stage,605,1600.0,1600.0,1760,0.7890537756270583,Standard
+Egypt vs IR Iran,Seattle,2026-06-27,Group Stage,605,1600.0,1600.0,1760,0.7890537756270583,Standard
+England vs Croatia,Dallas,2026-06-17,Group Stage,605,1600.0,1600.0,1760,0.7890537756270583,Standard
+England vs Ghana,Boston,2026-06-23,Group Stage,605,1600.0,1600.0,1760,0.7890537756270583,Standard
+Mexico vs South Africa,Mexico City,2026-06-11,Group Stage,605,1600.0,1600.0,1760,0.7890537756270583,Standard
+Panama vs Croatia,Toronto,2026-06-23,Group Stage,605,1600.0,1600.0,1760,0.7890537756270583,Standard
+Norway vs Senegal,New York/New Jersey,2026-06-23,Group Stage,605,1600.0,1600.0,1760,0.7890537756270583,Standard
+Norway vs France,Boston,2026-06-26,Group Stage,605,1600.0,1600.0,1760,0.7890537756270583,Standard
+New Zealand vs Egypt,Vancouver,2026-06-22,Group Stage,605,1600.0,1600.0,1760,0.7890537756270583,Standard
+New Zealand vs Belgium,Vancouver,2026-06-27,Group Stage,605,1600.0,1600.0,1760,0.7890537756270583,Standard
+Netherlands vs Japan,Dallas,2026-06-14,Group Stage,605,1600.0,1600.0,1760,0.7890537756270583,Standard
+Morocco vs Haiti,Atlanta,2026-06-24,Group Stage,605,1600.0,1600.0,1760,0.7890537756270583,Standard
+Mexico vs South Korea,Guadalajara,2026-06-19,Group Stage,605,1600.0,1600.0,1760,0.7890537756270583,Standard
+Jordan vs Argentina,Dallas,2026-06-28,Group Stage,605,1600.0,1600.0,1760,0.7890537756270583,Standard
+France vs Senegal,New York/New Jersey,2026-06-16,Group Stage,605,1600.0,1600.0,1760,0.7890537756270583,Standard
+Jordan vs Algeria,San Francisco Bay Area,2026-06-23,Group Stage,605,1600.0,1600.0,1760,0.7890537756270583,Standard
+Japan vs Winner UEFA Playoff B,Dallas,2026-06-26,Group Stage,605,1600.0,1600.0,1760,0.7890537756270583,Standard
+IR Iran vs New Zealand,Los Angeles,2026-06-16,Group Stage,605,1600.0,1600.0,1760,0.7890537756270583,Standard
+Haiti vs Scotland,Boston,2026-06-14,Group Stage,605,1600.0,1600.0,1760,0.7890537756270583,Standard
+Ghana vs Panama,Toronto,2026-06-17,Group Stage,605,1600.0,1600.0,1760,0.7890537756270583,Standard
+Germany vs Côte d'Ivoire,Toronto,2026-06-20,Group Stage,605,1600.0,1600.0,1760,0.7890537756270583,Standard
+Germany vs Curaçao,Houston,2026-06-14,Group Stage,605,1600.0,1600.0,1760,0.7890537756270583,Standard
+France vs Winner FIFA Playoff 2,Philadelphia,2026-06-22,Group Stage,605,1600.0,1600.0,1760,0.7890537756270583,Standard
+Winner UEFA Playoff D vs South Africa,Atlanta,2026-06-18,Group Stage,605,1600.0,1600.0,1760,0.7890537756270583,Standard

@@ -8,7 +8,7 @@ for col in ['lowest_price','avg_price','median_price']:
 df = df.dropna(subset=['median_price'])
 
 # Match-level summary (avg across categories)
-match_summary = df.groupby(['title','city','date']).agg(
+match_summary = df.groupby(['title','city','date','stage']).agg(
     lowest_price=('lowest_price','min'),
     median_price=('median_price','mean'),
     avg_price=('avg_price','mean'),
