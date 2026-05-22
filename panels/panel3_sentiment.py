@@ -6,6 +6,7 @@ import ast, re
 from collections import Counter
 from wordcloud import WordCloud
 import matplotlib.pyplot as plt
+import numpy as np
 
 STOPWORDS = {
     'the','a','an','and','or','in','is','it','to','of','for','that',
@@ -16,12 +17,102 @@ STOPWORDS = {
     'what','them','your','dont','cant','wont','its','very','really'
 }
 
+# Minimum comments for a team/city to appear in COMPARATIVE charts.
+# n>=30 is the standard rule-of-thumb for treating a sample mean as
+# reliable; below it an "average sentiment" is noise (Mexico had only 4
+# comments). Low-sample groups are excluded from rankings and flagged
+# transparently rather than silently compared.
+MIN_SAMPLE = 30
+
 def safe_list(x):
     try:
         val = ast.literal_eval(x) if isinstance(x, str) else x
         return val if isinstance(val, list) else []
     except:
         return []
+
+
+# ── UNCERTAINTY HELPERS ──────────────────────────────────────────
+# A mean of 4 comments is not on a different SCALE from a mean of 200 —
+# it is on the same -1..+1 axis but far less CERTAIN. No rescaling fixes
+# that; only showing the uncertainty does. We bootstrap a 95% CI per group
+# so a tiny sample renders as a wide whisker = visibly unreliable.
+
+def mean_ci(vals, n_boot=2000, ci=95, seed=42):
+    """Bootstrap mean + (lo, hi) CI. Handles small n honestly (wide interval).
+    Returns (mean, mean, mean) when n<2 (no interval estimable)."""
+    vals = np.asarray(vals, dtype=float)
+    m = float(vals.mean())
+    if len(vals) < 2:
+        return m, m, m
+    rng  = np.random.default_rng(seed)
+    boot = rng.choice(vals, size=(n_boot, len(vals)), replace=True).mean(axis=1)
+    lo = float(np.percentile(boot, (100 - ci) / 2))
+    hi = float(np.percentile(boot, 100 - (100 - ci) / 2))
+    return m, lo, hi
+
+
+def sent_color(v):
+    return '#E74C3C' if v < 0 else ('#F39C12' if v < 0.2 else '#27AE60')
+
+
+def ci_table(frame, key, min_n=3):
+    """Per-group mean + 95% CI + n. Drops groups with n<min_n (no CI possible)."""
+    rows = []
+    for name, grp in frame.groupby(key):
+        n = len(grp)
+        if n < min_n:
+            continue
+        m, lo, hi = mean_ci(grp['compound'].values)
+        rows.append({key: name, 'avg': m, 'lo': lo, 'hi': hi, 'n': n})
+    return pd.DataFrame(rows)
+
+
+def ci_bar(tbl, key, title):
+    """Horizontal bar of mean sentiment with asymmetric 95% CI whiskers.
+    Low-sample groups (n<MIN_SAMPLE) are faded + flagged, not hidden."""
+    tbl    = tbl.sort_values('avg', ascending=True)
+    labels = [f"{r[key]}  (n={int(r.n)})" + ("  ⚠" if r.n < MIN_SAMPLE else "")
+              for _, r in tbl.iterrows()]
+    colors = [sent_color(v) for v in tbl['avg']]
+    opac   = [0.45 if n < MIN_SAMPLE else 0.95 for n in tbl['n']]
+    fig = go.Figure(go.Bar(
+        x=tbl['avg'], y=labels, orientation='h',
+        marker=dict(color=colors, opacity=opac,
+                    line=dict(color='rgba(255,255,255,0.25)', width=1)),
+        error_x=dict(type='data', symmetric=False,
+                     array=(tbl['hi'] - tbl['avg']).tolist(),
+                     arrayminus=(tbl['avg'] - tbl['lo']).tolist(),
+                     color='rgba(255,255,255,0.7)', thickness=1.5, width=5),
+        hovertemplate='%{y}<br>avg sentiment %{x:.3f}<extra></extra>'
+    ))
+    fig.add_vline(x=0, line_dash='dot', line_color='rgba(255,255,255,0.3)')
+    fig.update_layout(
+        title=title, height=350,
+        margin=dict(l=0, r=40, t=40, b=0),
+        xaxis_title='Sentiment Score (−1 to +1)',
+        paper_bgcolor='rgba(0,0,0,0)', plot_bgcolor='rgba(0,0,0,0)',
+        font=dict(color='white')
+    )
+    return fig
+
+
+def takeaway(tbl, key, label):
+    """One plain-English sentence so a non-analytical reader gets the point
+    without decoding the whiskers. Computed from the data, not hardcoded."""
+    lean = lambda v: 'positive' if v >= 0.05 else ('negative' if v <= -0.05 else 'mixed')
+    reliable = tbl[tbl['n'] >= MIN_SAMPLE].sort_values('avg', ascending=False)
+    small    = tbl[tbl['n'] <  MIN_SAMPLE]
+    if reliable.empty:
+        return (f'**Bottom line:** no {label} has enough comments yet to call — '
+                'treat every bar here as a rough hint, not a finding.')
+    parts = [f'{r[key]} (leans {lean(r.avg)})' for _, r in reliable.iterrows()]
+    joined = ' and '.join(parts) if len(parts) <= 2 else ', '.join(parts)
+    verb = 'has' if len(parts) == 1 else 'have'
+    msg = f'**Bottom line:** only {joined} {verb} enough comments to trust.'
+    if not small.empty:
+        msg += f' The faded {label}s are too small to rank — ignore their order.'
+    return msg
 
 def show_panel3():
     df = pd.read_csv('data/processed/youtube_tagged.csv')
@@ -52,29 +143,26 @@ def show_panel3():
     col1, col2 = st.columns([2,1])
 
     with col1:
-        team_agg = exploded.groupby('teams').agg(
-            avg_sent=('compound','mean'),
-            comments=('compound','count')
-        ).reset_index().sort_values('avg_sent', ascending=True)
-
-        fig = px.bar(
-            team_agg, x='avg_sent', y='teams',
-            orientation='h',
-            color='avg_sent',
-            text='comments',
-            color_continuous_scale=['#E74C3C','#F39C12','#27AE60'],
-            title='Average Sentiment Score by Team',
-            labels={'avg_sent':'Sentiment Score','teams':'','comments':'Comments'}
-        )
-        fig.update_traces(texttemplate='%{text} comments', textposition='outside')
-        fig.update_layout(
-            height=350, coloraxis_showscale=False,
-            margin=dict(l=0,r=80,t=40,b=0),
-            paper_bgcolor='rgba(0,0,0,0)',
-            plot_bgcolor='rgba(0,0,0,0)',
-            font=dict(color='white')
-        )
-        st.plotly_chart(fig, use_container_width=True)
+        team_tbl = ci_table(exploded, 'teams', min_n=3)
+        if not team_tbl.empty:
+            st.plotly_chart(
+                ci_bar(team_tbl, 'teams',
+                       'Average Sentiment by Team (with confidence range)'),
+                use_container_width=True
+            )
+            st.info(takeaway(team_tbl, 'teams', 'team'))
+            st.caption(
+                'The line through each bar = how sure we can be. '
+                'A long line means too few comments to trust the score. '
+                f'Faded bars (⚠) have under {MIN_SAMPLE} comments.'
+            )
+            tiny    = exploded.groupby('teams').size()
+            dropped = sorted([t for t, c in tiny.items()
+                              if c < 3 and len(str(t)) > 1])
+            if dropped:
+                st.caption(f'Not shown — under 3 comments: {", ".join(dropped)}')
+        else:
+            st.info('Not enough tagged comments for a team comparison.')
 
     with col2:
         sent_counts = df['sentiment'].value_counts().reset_index()
@@ -101,9 +189,22 @@ def show_panel3():
 
     # ── ROW 2: TEAM DEEP DIVE ─────────────────────────────────────
     st.subheader('Team Deep Dive')
+    st.caption('Pick a team below — the keywords, breakdown, and comments all '
+               'update to that team. (Defaults to Argentina.)')
+    team_counts   = exploded['teams'].value_counts().to_dict()
     teams_list    = sorted(exploded['teams'].dropna().unique().tolist())
-    selected_team = st.selectbox('Select a team:', teams_list)
+    selected_team = st.selectbox(
+        'Select a team:',
+        teams_list,
+        format_func=lambda t: f'{t}  (n={team_counts.get(t, 0)})'
+    )
     team_df       = exploded[exploded['teams'] == selected_team]
+
+    if team_counts.get(selected_team, 0) < MIN_SAMPLE:
+        st.warning(
+            f'Low sample: only {team_counts.get(selected_team, 0)} comments for '
+            f'{selected_team}. Treat the breakdown below as directional, not reliable.'
+        )
 
     col3, col4 = st.columns(2)
 
@@ -182,123 +283,29 @@ def show_panel3():
     city_exp = df.explode('cities')
     city_exp = city_exp[city_exp['cities'].astype(str).str.len() > 1]
 
-    if not city_exp.empty:
-        city_agg = city_exp.groupby('cities').agg(
-            avg_sent=('compound','mean'),
-            comments=('compound','count')
-        ).reset_index()
-        fig4 = px.bar(
-            city_agg.sort_values('comments', ascending=False),
-            x='cities', y='comments',
-            color='avg_sent',
-            color_continuous_scale=['#E74C3C','#F39C12','#27AE60'],
-            title='Comment Volume + Sentiment by Host City',
-            labels={'cities':'City','comments':'# Comments','avg_sent':'Avg Sentiment'}
+    city_tbl = (ci_table(city_exp, 'cities', min_n=3)
+                if not city_exp.empty else pd.DataFrame())
+
+    if len(city_tbl) >= 3:
+        st.plotly_chart(
+            ci_bar(city_tbl, 'cities',
+                   'Average Sentiment by Host City (with confidence range)'),
+            use_container_width=True
         )
-        fig4.update_layout(
-            height=350, margin=dict(l=0,r=0,t=40,b=0),
-            paper_bgcolor='rgba(0,0,0,0)',
-            plot_bgcolor='rgba(0,0,0,0)',
-            font=dict(color='white')
+        st.info(takeaway(city_tbl, 'cities', 'city'))
+        st.caption(
+            'Same idea as teams: a long line through a bar means too few '
+            f'comments to trust. Faded bars have under {MIN_SAMPLE} comments.'
         )
-        st.plotly_chart(fig4, use_container_width=True)
     else:
-        st.info('Not enough city-tagged comments yet')
+        n_ok = len(city_tbl)
+        st.info(
+            'Not enough city-tagged comments yet to compare host cities fairly, '
+            f'so this view is held back (only {n_ok} '
+            f'{"city clears" if n_ok == 1 else "cities clear"} the minimum). '
+            'Only ~85 of 2,119 comments name a host city — it unlocks as '
+            'city-tagging improves.'
+        )
 
     st.divider()
-
-    # ── ROW 5: WHAT FANS ACTUALLY SEARCH ─────────────────────────
-    st.subheader('🔍 What Are Fans Actually Searching For?')
-    st.caption('Google Trends search volume across FIFA World Cup 2026 keywords')
-
-    try:
-        trends = pd.read_csv('data/raw/trends_serp.csv')
-        trends = trends[trends['date'].notna()].copy()
-        trends['date'] = pd.to_datetime(trends['date'])
-
-        kw_cols = ['World Cup tickets','FIFA 2026','USMNT',
-                   'Argentina soccer','Mexico soccer']
-
-        # Chart 1: keyword totals
-        kw_totals = trends[kw_cols].mean().reset_index()
-        kw_totals.columns = ['Keyword','Avg Search Volume']
-        kw_totals = kw_totals.sort_values('Avg Search Volume', ascending=True)
-
-        fig_kw = px.bar(
-            kw_totals,
-            x='Avg Search Volume', y='Keyword',
-            orientation='h',
-            color='Avg Search Volume',
-            color_continuous_scale='Blues',
-            title='Top Searched Keywords — FIFA World Cup 2026 (US)',
-            text='Avg Search Volume'
-        )
-        fig_kw.update_traces(texttemplate='%{text:.1f}', textposition='outside')
-        fig_kw.update_layout(
-            height=320, coloraxis_showscale=False,
-            margin=dict(l=0,r=80,t=40,b=0),
-            paper_bgcolor='rgba(0,0,0,0)',
-            plot_bgcolor='rgba(0,0,0,0)',
-            font=dict(color='white')
-        )
-        st.plotly_chart(fig_kw, use_container_width=True)
-        st.caption('💡 FIFA 2026 = highest awareness. World Cup tickets = commercial intent. Team searches = fan engagement.')
-
-        st.divider()
-
-        # Chart 2: search over time
-        st.markdown('**Search Interest Over Time — All Keywords**')
-        city_opts = ['All Cities'] + sorted(trends['city'].unique().tolist())
-        sel_city  = st.selectbox('Filter by city:', city_opts, key='trend_city')
-
-        if sel_city == 'All Cities':
-            trend_df = trends.groupby('date')[kw_cols].mean().reset_index()
-        else:
-            trend_df = trends[trends['city']==sel_city][['date']+kw_cols].copy()
-
-        melted = trend_df.melt(
-            id_vars='date',
-            value_vars=kw_cols,
-            var_name='Keyword',
-            value_name='Search Interest'
-        )
-
-        fig_time = px.line(
-            melted, x='date', y='Search Interest',
-            color='Keyword',
-            title=f'Search Volume Over Time — {sel_city}',
-            labels={'date':'Date','Search Interest':'Search Volume (0-100)'}
-        )
-        fig_time.update_layout(
-            height=400,
-            paper_bgcolor='rgba(0,0,0,0)',
-            plot_bgcolor='rgba(0,0,0,0)',
-            font=dict(color='white')
-        )
-        st.plotly_chart(fig_time, use_container_width=True)
-        st.caption('💡 Rising lines = growing interest. Flat = market needs activation.')
-
-        st.divider()
-
-        # Chart 3: city vs keyword heatmap
-        st.markdown('**Which Cities Search Which Keywords Most?**')
-        city_kw = trends.groupby('city')[kw_cols].mean().round(1)
-
-        fig_heat = px.imshow(
-            city_kw,
-            color_continuous_scale='Blues',
-            title='Search Interest Heatmap — City vs Keyword',
-            labels=dict(x='Keyword', y='City', color='Interest'),
-            aspect='auto',
-            text_auto=True
-        )
-        fig_heat.update_layout(
-            height=420,
-            paper_bgcolor='rgba(0,0,0,0)',
-            font=dict(color='white')
-        )
-        st.plotly_chart(fig_heat, use_container_width=True)
-        st.caption('💡 Dark blue = high interest. Shows which cities need which message.')
-
-    except Exception as e:
-        st.info(f'Search trends unavailable: {e}')
+    st.caption('Search-interest and keyword trends now live in the Demand tab.')

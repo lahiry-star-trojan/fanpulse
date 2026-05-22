@@ -11,4 +11,5 @@ wordcloud
 matplotlib
 beautifulsoup4
 praw
-pytrends
+pytrendsnumpy
+numpy
