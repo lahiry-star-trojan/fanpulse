@@ -10,6 +10,5 @@ google-api-python-client
 wordcloud
 matplotlib
 beautifulsoup4
-praw
-pytrendsnumpy
+pytrends
 numpy
