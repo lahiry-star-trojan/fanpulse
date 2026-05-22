@@ -1,0 +1,99 @@
+keyword,bucket,city,value
+World Cup tickets,commercial,Kansas City,95.0
+World Cup tickets,commercial,New York,86.0
+World Cup tickets,commercial,Dallas,81.0
+World Cup tickets,commercial,Boston,78.0
+World Cup tickets,commercial,Houston,78.0
+World Cup tickets,commercial,San Francisco,76.0
+World Cup tickets,commercial,Miami,76.0
+World Cup tickets,commercial,Seattle,75.0
+World Cup tickets,commercial,Los Angeles,74.0
+World Cup tickets,commercial,Atlanta,71.0
+World Cup tickets,commercial,Philadelphia,57.0
+World Cup hospitality,commercial,San Francisco,16.0
+World Cup hospitality,commercial,Miami,10.0
+World Cup hospitality,commercial,New York,10.0
+World Cup hospitality,commercial,Boston,9.0
+World Cup hospitality,commercial,Dallas,9.0
+World Cup hospitality,commercial,Los Angeles,7.0
+World Cup hospitality,commercial,Seattle,7.0
+World Cup hospitality,commercial,Atlanta,7.0
+World Cup hospitality,commercial,Philadelphia,5.0
+World Cup hospitality,commercial,Houston,0.0
+World Cup hospitality,commercial,Kansas City,0.0
+World Cup packages,commercial,San Francisco,9.0
+World Cup packages,commercial,Miami,9.0
+World Cup packages,commercial,New York,6.0
+World Cup packages,commercial,Seattle,6.0
+World Cup packages,commercial,Los Angeles,5.0
+World Cup packages,commercial,Atlanta,4.0
+World Cup packages,commercial,Dallas,4.0
+World Cup packages,commercial,Boston,3.0
+World Cup packages,commercial,Houston,3.0
+World Cup packages,commercial,Philadelphia,2.0
+USMNT,fandom,Atlanta,100.0
+USMNT,fandom,Seattle,67.0
+USMNT,fandom,Los Angeles,58.0
+USMNT,fandom,Kansas City,54.0
+USMNT,fandom,Boston,53.0
+USMNT,fandom,San Francisco,48.0
+USMNT,fandom,Philadelphia,48.0
+USMNT,fandom,Dallas,45.0
+USMNT,fandom,New York,45.0
+USMNT,fandom,Miami,45.0
+USMNT,fandom,Houston,41.0
+Mexico soccer,fandom,Los Angeles,69.0
+Mexico soccer,fandom,Houston,44.0
+Mexico soccer,fandom,Dallas,39.0
+Mexico soccer,fandom,San Francisco,28.0
+Mexico soccer,fandom,Seattle,17.0
+Mexico soccer,fandom,Atlanta,15.0
+Mexico soccer,fandom,Miami,15.0
+Mexico soccer,fandom,Kansas City,14.0
+Mexico soccer,fandom,New York,13.0
+Mexico soccer,fandom,Philadelphia,10.0
+Mexico soccer,fandom,Boston,7.0
+Argentina soccer,fandom,Miami,28.0
+Argentina soccer,fandom,Kansas City,18.0
+Argentina soccer,fandom,San Francisco,16.0
+Argentina soccer,fandom,Houston,16.0
+Argentina soccer,fandom,Dallas,16.0
+Argentina soccer,fandom,Los Angeles,15.0
+Argentina soccer,fandom,New York,14.0
+Argentina soccer,fandom,Atlanta,11.0
+Argentina soccer,fandom,Boston,11.0
+Argentina soccer,fandom,Seattle,10.0
+Argentina soccer,fandom,Philadelphia,8.0
+World Cup schedule,logistics,New York,34.0
+World Cup schedule,logistics,San Francisco,34.0
+World Cup schedule,logistics,Miami,32.0
+World Cup schedule,logistics,Seattle,30.0
+World Cup schedule,logistics,Kansas City,30.0
+World Cup schedule,logistics,Los Angeles,29.0
+World Cup schedule,logistics,Boston,29.0
+World Cup schedule,logistics,Dallas,29.0
+World Cup schedule,logistics,Atlanta,25.0
+World Cup schedule,logistics,Houston,24.0
+World Cup schedule,logistics,Philadelphia,21.0
+World Cup stadiums,logistics,San Francisco,21.0
+World Cup stadiums,logistics,Miami,19.0
+World Cup stadiums,logistics,Los Angeles,18.0
+World Cup stadiums,logistics,Dallas,17.0
+World Cup stadiums,logistics,New York,17.0
+World Cup stadiums,logistics,Atlanta,17.0
+World Cup stadiums,logistics,Kansas City,14.0
+World Cup stadiums,logistics,Boston,14.0
+World Cup stadiums,logistics,Seattle,12.0
+World Cup stadiums,logistics,Houston,12.0
+World Cup stadiums,logistics,Philadelphia,10.0
+World Cup host cities,logistics,Kansas City,33.0
+World Cup host cities,logistics,Atlanta,13.0
+World Cup host cities,logistics,Seattle,11.0
+World Cup host cities,logistics,San Francisco,11.0
+World Cup host cities,logistics,Dallas,11.0
+World Cup host cities,logistics,Houston,11.0
+World Cup host cities,logistics,Los Angeles,11.0
+World Cup host cities,logistics,Miami,10.0
+World Cup host cities,logistics,New York,9.0
+World Cup host cities,logistics,Boston,8.0
+World Cup host cities,logistics,Philadelphia,6.0
