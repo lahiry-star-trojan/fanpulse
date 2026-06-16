@@ -18,15 +18,22 @@ TEXT_POS = {
     'Boston':'top right','Philadelphia':'bottom left',
 }
 # keywords shown in the heatmap (sparse ones dropped), grouped by intent
-KW_SHOW  = ['Mexico soccer','Argentina soccer','USMNT',
-            'World Cup tickets','World Cup host cities','World Cup stadiums',
-            'World Cup schedule']
+KW_SHOW  = ['Mexico soccer','Argentina soccer','USMNT','Brazil soccer',
+            'Morocco soccer','Ecuador soccer','South Korea soccer',
+            'World Cup tickets','World Cup resale tickets',
+            'World Cup stadiums','World Cup schedule',
+            'World Cup tickets near me','how to watch World Cup']
 KW_SHORT = {'Mexico soccer':'Mexico','Argentina soccer':'Argentina','USMNT':'USMNT',
-            'World Cup tickets':'Tickets','World Cup host cities':'Host cities',
-            'World Cup stadiums':'Stadiums','World Cup schedule':'Schedule'}
+            'Brazil soccer':'Brazil','Morocco soccer':'Morocco',
+            'Ecuador soccer':'Ecuador','South Korea soccer':'S. Korea',
+            'World Cup tickets':'Tickets','World Cup resale tickets':'Resale',
+            'World Cup stadiums':'Stadiums','World Cup schedule':'Schedule',
+            'World Cup tickets near me':'Tickets near me','how to watch World Cup':'How to watch'}
 KW_GROUP = {'Mexico':'fandom','Argentina':'fandom','USMNT':'fandom',
-            'Tickets':'commercial','Host cities':'logistics',
-            'Stadiums':'logistics','Schedule':'logistics'}
+            'Brazil':'fandom','Morocco':'fandom','Ecuador':'fandom','S. Korea':'fandom',
+            'Tickets':'commercial','Resale':'commercial',
+            'Stadiums':'logistics','Schedule':'logistics',
+            'Tickets near me':'watch','How to watch':'watch'}
 
 # ── qualitative cleaning ──────────────────────────────────────────
 JUNK = ['frontend','node.js','node js',' iot ','internet of things','deep learning',
@@ -36,9 +43,11 @@ OTHER_SPORT = ['fiba','fei ','baseball',' wbc','nhl','nba ',"women's",'womens','
                'hockey','volleyball']
 COLLECT = ['panini','sticker','album','collection']
 STAGE_LABEL = {'commercial':'Buying intent','fandom':'Fandom & players',
-               'logistics':'Logistics & schedule','collectibles':'Collectibles'}
+               'logistics':'Logistics & schedule','collectibles':'Collectibles',
+               'watch':'Watch & attend'}
 STAGE_COLOR = {'Buying intent':'#E94560','Fandom & players':'#F39C12',
-               'Logistics & schedule':'#3498DB','Collectibles':'#9B59B6'}
+               'Logistics & schedule':'#3498DB','Collectibles':'#9B59B6',
+               'Watch & attend':'#1ABC9C'}
 
 
 def is_real_wc(q):
@@ -160,8 +169,9 @@ def show_panel1():
         st.plotly_chart(heat, use_container_width=True)
         st.caption(
             'Rows = cities (top = strongest overall). Columns = keywords, grouped '
-            '**Fandom** (Mexico/Argentina/USMNT) · **Buying** (Tickets) · '
-            '**Logistics** (Host cities/Stadiums/Schedule). Each column is shaded '
+            '**Fandom** (Mexico/Argentina/Brazil/Morocco/Ecuador/S.Korea/USMNT) · '
+            '**Buying** (Tickets/Resale) · **Logistics** (Stadiums/Schedule) · '
+            '**Watch & attend** (Tickets near me/How to watch). Each column is shaded '
             'against its own hottest metro, so a dark cell = that city '
             '**over-indexes** on that search. Numbers are 0–100 interest. '
             'Read across a city to see what drives it.')

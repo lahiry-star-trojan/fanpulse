@@ -1,99 +1,144 @@
 keyword,bucket,city,value
-World Cup tickets,commercial,Kansas City,95.0
-World Cup tickets,commercial,New York,86.0
-World Cup tickets,commercial,Dallas,81.0
-World Cup tickets,commercial,Boston,78.0
-World Cup tickets,commercial,Houston,78.0
-World Cup tickets,commercial,San Francisco,76.0
-World Cup tickets,commercial,Miami,76.0
-World Cup tickets,commercial,Seattle,75.0
-World Cup tickets,commercial,Los Angeles,74.0
-World Cup tickets,commercial,Atlanta,71.0
-World Cup tickets,commercial,Philadelphia,57.0
-World Cup hospitality,commercial,San Francisco,16.0
-World Cup hospitality,commercial,Miami,10.0
-World Cup hospitality,commercial,New York,10.0
-World Cup hospitality,commercial,Boston,9.0
-World Cup hospitality,commercial,Dallas,9.0
-World Cup hospitality,commercial,Los Angeles,7.0
-World Cup hospitality,commercial,Seattle,7.0
-World Cup hospitality,commercial,Atlanta,7.0
-World Cup hospitality,commercial,Philadelphia,5.0
-World Cup hospitality,commercial,Houston,0.0
-World Cup hospitality,commercial,Kansas City,0.0
-World Cup packages,commercial,San Francisco,9.0
-World Cup packages,commercial,Miami,9.0
-World Cup packages,commercial,New York,6.0
-World Cup packages,commercial,Seattle,6.0
-World Cup packages,commercial,Los Angeles,5.0
-World Cup packages,commercial,Atlanta,4.0
-World Cup packages,commercial,Dallas,4.0
-World Cup packages,commercial,Boston,3.0
-World Cup packages,commercial,Houston,3.0
-World Cup packages,commercial,Philadelphia,2.0
-USMNT,fandom,Atlanta,100.0
-USMNT,fandom,Seattle,67.0
-USMNT,fandom,Los Angeles,58.0
-USMNT,fandom,Kansas City,54.0
-USMNT,fandom,Boston,53.0
-USMNT,fandom,San Francisco,48.0
-USMNT,fandom,Philadelphia,48.0
-USMNT,fandom,Dallas,45.0
-USMNT,fandom,New York,45.0
-USMNT,fandom,Miami,45.0
-USMNT,fandom,Houston,41.0
+World Cup tickets,commercial,New York,100.0
+World Cup tickets,commercial,Dallas,94.0
+World Cup tickets,commercial,Kansas City,91.0
+World Cup tickets,commercial,San Francisco,89.0
+World Cup tickets,commercial,Los Angeles,87.0
+World Cup tickets,commercial,Houston,86.0
+World Cup tickets,commercial,Seattle,85.0
+World Cup tickets,commercial,Boston,84.0
+World Cup tickets,commercial,Atlanta,80.0
+World Cup tickets,commercial,Miami,74.0
+World Cup tickets,commercial,Philadelphia,60.0
+World Cup resale tickets,commercial,San Francisco,37.0
+World Cup resale tickets,commercial,Los Angeles,28.0
+World Cup resale tickets,commercial,Seattle,25.0
+World Cup resale tickets,commercial,Dallas,22.0
+World Cup resale tickets,commercial,Boston,21.0
+World Cup resale tickets,commercial,Houston,20.0
+World Cup resale tickets,commercial,New York,20.0
+World Cup resale tickets,commercial,Miami,20.0
+World Cup resale tickets,commercial,Atlanta,15.0
+World Cup resale tickets,commercial,Philadelphia,13.0
+World Cup resale tickets,commercial,Kansas City,4.0
+USMNT,fandom,Seattle,88.0
+USMNT,fandom,Atlanta,84.0
+USMNT,fandom,Kansas City,78.0
+USMNT,fandom,Los Angeles,73.0
+USMNT,fandom,Boston,71.0
+USMNT,fandom,San Francisco,70.0
+USMNT,fandom,Philadelphia,66.0
+USMNT,fandom,Dallas,60.0
+USMNT,fandom,New York,55.0
+USMNT,fandom,Houston,50.0
+USMNT,fandom,Miami,50.0
 Mexico soccer,fandom,Los Angeles,69.0
-Mexico soccer,fandom,Houston,44.0
-Mexico soccer,fandom,Dallas,39.0
-Mexico soccer,fandom,San Francisco,28.0
-Mexico soccer,fandom,Seattle,17.0
-Mexico soccer,fandom,Atlanta,15.0
-Mexico soccer,fandom,Miami,15.0
-Mexico soccer,fandom,Kansas City,14.0
-Mexico soccer,fandom,New York,13.0
-Mexico soccer,fandom,Philadelphia,10.0
-Mexico soccer,fandom,Boston,7.0
-Argentina soccer,fandom,Miami,28.0
-Argentina soccer,fandom,Kansas City,18.0
-Argentina soccer,fandom,San Francisco,16.0
-Argentina soccer,fandom,Houston,16.0
+Mexico soccer,fandom,Houston,43.0
+Mexico soccer,fandom,Dallas,38.0
+Mexico soccer,fandom,San Francisco,24.0
+Mexico soccer,fandom,Seattle,14.0
+Mexico soccer,fandom,Kansas City,13.0
+Mexico soccer,fandom,Atlanta,12.0
+Mexico soccer,fandom,Miami,12.0
+Mexico soccer,fandom,New York,10.0
+Mexico soccer,fandom,Philadelphia,7.0
+Mexico soccer,fandom,Boston,6.0
+Argentina soccer,fandom,Kansas City,25.0
+Argentina soccer,fandom,Miami,24.0
+Argentina soccer,fandom,Houston,17.0
 Argentina soccer,fandom,Dallas,16.0
-Argentina soccer,fandom,Los Angeles,15.0
-Argentina soccer,fandom,New York,14.0
-Argentina soccer,fandom,Atlanta,11.0
-Argentina soccer,fandom,Boston,11.0
-Argentina soccer,fandom,Seattle,10.0
-Argentina soccer,fandom,Philadelphia,8.0
-World Cup schedule,logistics,New York,34.0
-World Cup schedule,logistics,San Francisco,34.0
-World Cup schedule,logistics,Miami,32.0
-World Cup schedule,logistics,Seattle,30.0
-World Cup schedule,logistics,Kansas City,30.0
-World Cup schedule,logistics,Los Angeles,29.0
-World Cup schedule,logistics,Boston,29.0
-World Cup schedule,logistics,Dallas,29.0
-World Cup schedule,logistics,Atlanta,25.0
-World Cup schedule,logistics,Houston,24.0
-World Cup schedule,logistics,Philadelphia,21.0
-World Cup stadiums,logistics,San Francisco,21.0
-World Cup stadiums,logistics,Miami,19.0
-World Cup stadiums,logistics,Los Angeles,18.0
-World Cup stadiums,logistics,Dallas,17.0
-World Cup stadiums,logistics,New York,17.0
-World Cup stadiums,logistics,Atlanta,17.0
-World Cup stadiums,logistics,Kansas City,14.0
-World Cup stadiums,logistics,Boston,14.0
-World Cup stadiums,logistics,Seattle,12.0
-World Cup stadiums,logistics,Houston,12.0
-World Cup stadiums,logistics,Philadelphia,10.0
-World Cup host cities,logistics,Kansas City,33.0
-World Cup host cities,logistics,Atlanta,13.0
-World Cup host cities,logistics,Seattle,11.0
-World Cup host cities,logistics,San Francisco,11.0
-World Cup host cities,logistics,Dallas,11.0
-World Cup host cities,logistics,Houston,11.0
-World Cup host cities,logistics,Los Angeles,11.0
-World Cup host cities,logistics,Miami,10.0
-World Cup host cities,logistics,New York,9.0
-World Cup host cities,logistics,Boston,8.0
-World Cup host cities,logistics,Philadelphia,6.0
+Argentina soccer,fandom,Los Angeles,14.0
+Argentina soccer,fandom,San Francisco,12.0
+Argentina soccer,fandom,New York,11.0
+Argentina soccer,fandom,Atlanta,10.0
+Argentina soccer,fandom,Boston,9.0
+Argentina soccer,fandom,Seattle,8.0
+Argentina soccer,fandom,Philadelphia,7.0
+Brazil soccer,fandom,Boston,92.0
+Brazil soccer,fandom,Miami,91.0
+Brazil soccer,fandom,New York,67.0
+Brazil soccer,fandom,Los Angeles,65.0
+Brazil soccer,fandom,San Francisco,61.0
+Brazil soccer,fandom,Houston,56.0
+Brazil soccer,fandom,Dallas,53.0
+Brazil soccer,fandom,Philadelphia,52.0
+Brazil soccer,fandom,Atlanta,50.0
+Brazil soccer,fandom,Kansas City,41.0
+Brazil soccer,fandom,Seattle,40.0
+Morocco soccer,fandom,New York,100.0
+Morocco soccer,fandom,Boston,98.0
+Morocco soccer,fandom,Miami,91.0
+Morocco soccer,fandom,San Francisco,69.0
+Morocco soccer,fandom,Los Angeles,68.0
+Morocco soccer,fandom,Dallas,65.0
+Morocco soccer,fandom,Atlanta,64.0
+Morocco soccer,fandom,Philadelphia,63.0
+Morocco soccer,fandom,Houston,63.0
+Morocco soccer,fandom,Seattle,49.0
+Morocco soccer,fandom,Kansas City,31.0
+Ecuador soccer,fandom,New York,58.0
+Ecuador soccer,fandom,Miami,43.0
+Ecuador soccer,fandom,Philadelphia,28.0
+Ecuador soccer,fandom,Kansas City,21.0
+Ecuador soccer,fandom,Los Angeles,20.0
+Ecuador soccer,fandom,Houston,17.0
+Ecuador soccer,fandom,San Francisco,15.0
+Ecuador soccer,fandom,Boston,14.0
+Ecuador soccer,fandom,Dallas,14.0
+Ecuador soccer,fandom,Atlanta,11.0
+Ecuador soccer,fandom,Seattle,11.0
+South Korea soccer,fandom,Los Angeles,58.0
+South Korea soccer,fandom,San Francisco,38.0
+South Korea soccer,fandom,Dallas,37.0
+South Korea soccer,fandom,Houston,34.0
+South Korea soccer,fandom,Miami,33.0
+South Korea soccer,fandom,New York,31.0
+South Korea soccer,fandom,Seattle,31.0
+South Korea soccer,fandom,Atlanta,29.0
+South Korea soccer,fandom,Boston,21.0
+South Korea soccer,fandom,Kansas City,19.0
+South Korea soccer,fandom,Philadelphia,19.0
+World Cup schedule,logistics,Los Angeles,100.0
+World Cup schedule,logistics,San Francisco,84.0
+World Cup schedule,logistics,Miami,81.0
+World Cup schedule,logistics,New York,78.0
+World Cup schedule,logistics,Boston,77.0
+World Cup schedule,logistics,Seattle,74.0
+World Cup schedule,logistics,Dallas,66.0
+World Cup schedule,logistics,Houston,63.0
+World Cup schedule,logistics,Kansas City,62.0
+World Cup schedule,logistics,Atlanta,62.0
+World Cup schedule,logistics,Philadelphia,57.0
+World Cup stadiums,logistics,Los Angeles,61.0
+World Cup stadiums,logistics,San Francisco,61.0
+World Cup stadiums,logistics,Dallas,55.0
+World Cup stadiums,logistics,Boston,54.0
+World Cup stadiums,logistics,Miami,49.0
+World Cup stadiums,logistics,Houston,48.0
+World Cup stadiums,logistics,New York,48.0
+World Cup stadiums,logistics,Atlanta,43.0
+World Cup stadiums,logistics,Seattle,41.0
+World Cup stadiums,logistics,Philadelphia,37.0
+World Cup stadiums,logistics,Kansas City,35.0
+World Cup tickets near me,watch,San Francisco,12.0
+World Cup tickets near me,watch,New York,11.0
+World Cup tickets near me,watch,Philadelphia,11.0
+World Cup tickets near me,watch,Atlanta,10.0
+World Cup tickets near me,watch,Houston,10.0
+World Cup tickets near me,watch,Los Angeles,9.0
+World Cup tickets near me,watch,Boston,9.0
+World Cup tickets near me,watch,Dallas,6.0
+World Cup tickets near me,watch,Kansas City,3.0
+World Cup tickets near me,watch,Miami,2.0
+World Cup tickets near me,watch,Seattle,1.0
+how to watch World Cup,watch,San Francisco,74.0
+how to watch World Cup,watch,Seattle,73.0
+how to watch World Cup,watch,Los Angeles,70.0
+how to watch World Cup,watch,Boston,64.0
+how to watch World Cup,watch,Dallas,55.0
+how to watch World Cup,watch,New York,52.0
+how to watch World Cup,watch,Miami,51.0
+how to watch World Cup,watch,Houston,50.0
+how to watch World Cup,watch,Kansas City,49.0
+how to watch World Cup,watch,Atlanta,48.0
+how to watch World Cup,watch,Philadelphia,42.0

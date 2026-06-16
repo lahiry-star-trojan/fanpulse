@@ -46,9 +46,19 @@ API_KEY = os.getenv('SERPAPI_KEY')
 # TUNE THESE. Grouped by what the search reveals about the searcher.
 # Keep it tight: each keyword = 1 API call.
 KEYWORDS = {
-    'commercial': ['World Cup tickets', 'World Cup hospitality', 'World Cup packages'],
-    'fandom':     ['USMNT', 'Mexico soccer', 'Argentina soccer'],
-    'logistics':  ['World Cup schedule', 'World Cup stadiums', 'World Cup host cities'],
+    # commercial now carries the secondary-market (resale) signal — the
+    # two-sided-marketplace pricing spine, not just primary tickets.
+    'commercial': ['World Cup tickets', 'World Cup resale tickets'],
+    # fandom expanded to the teams that actually move US search 5 days in:
+    # diaspora corridors (Mexico/Argentina/Brazil) + USMNT + Ronaldo effect.
+    'fandom':     ['USMNT', 'Mexico soccer', 'Argentina soccer',
+                   'Brazil soccer', 'Morocco soccer', 'Ecuador soccer',
+                   'South Korea soccer'],
+    # logistics tightened: schedule (spikes on match days) + stadiums
+    # (discriminates by host city). Dropped host-cities (redundant w/ stadiums).
+    'logistics':  ['World Cup schedule', 'World Cup stadiums'],
+    # NEW: live bottom-of-funnel "I want in right now" intent.
+    'watch':      ['World Cup tickets near me', 'how to watch World Cup'],
 }
 # Dropped 'FIFA 2026' on purpose — it's the event name, so it always wins and
 # tells a strategist nothing. Re-add if you want a raw-awareness baseline.
