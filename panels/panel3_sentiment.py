@@ -123,7 +123,8 @@ def show_panel3():
     exploded = exploded[exploded['teams'].astype(str).str.len() > 1]
 
     st.subheader('💬 Social Sentiment — YouTube Fan Analysis')
-    st.caption('2,100+ YouTube comments analyzed across FIFA World Cup 2026 content')
+    st.caption('2,100+ YouTube comments analyzed across FIFA World Cup 2026 content · '
+               'snapshot from pre-tournament window (not live match reactions)')
 
     # ── KPI ROW ──────────────────────────────────────────────────
     total   = len(df)
