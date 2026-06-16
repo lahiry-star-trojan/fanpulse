@@ -40,8 +40,36 @@ JUNK = ['frontend','node.js','node js',' iot ','internet of things','deep learni
         'lidl','framework','tutorial','backend','machine learning']
 OTHER_SPORT = ['fiba','fei ','baseball',' wbc','nhl','nba ',"women's",'womens','women ',
                'u17','u-17','u 17','basketball','equestrian','rugby','cricket','t20',
-               'hockey','volleyball']
+               'hockey','volleyball','knicks','lakers','yankees','nfl ',' mlb ',
+               'mamdani']  # trend-jacking names that ride WC terms but aren't WC
 COLLECT = ['panini','sticker','album','collection']
+
+# ── ALLOWLIST: a rising query must look World-Cup-related to pass ──
+# Robust by design — junk (broncho, trouper, wikipedia, mamdani...) fails
+# unless it matches one of these tokens. Denylist above still removes
+# obvious other-sport/tech noise that might otherwise sneak past 'vs' etc.
+WC_TOKENS = [
+    'world cup','fifa','wc 2026','wc2026','soccer','football',
+    # marketplace / intent
+    'ticket','tickets','resale','seatgeek','vivid','tickpick','gametime',
+    'stubhub','hospitality','final','match','schedule','stadium','venue',
+    'opening ceremony','qualifier','group stage','knockout','bracket',
+    # host cities
+    'los angeles','san francisco','seattle','dallas','houston','kansas city',
+    'atlanta','miami','boston','new york','philadelphia','inglewood','arlington',
+    'east rutherford','foxborough','santa clara','toronto','vancouver',
+    # tracked + major nations (covers "usa vs paraguay", "brazil vs morocco")
+    'usa','usmnt','mexico','argentina','brazil','morocco','ecuador','south korea',
+    'korea','paraguay','algeria','senegal','croatia','panama','haiti','scotland',
+    'belgium','spain','portugal','france','england','canada','bosnia','czechia',
+    'colombia','uruguay','japan','iran','norway','austria','jordan',
+    'vs ',' v ',
+]
+# known players whose name alone is a legit WC signal (no WC word in query)
+PLAYERS = ['messi','ronaldo','mbappe','musah','pulisic','quiñones','quinones',
+           'pochettino','lautaro','vinicius','neymar']
+
+
 STAGE_LABEL = {'commercial':'Buying intent','fandom':'Fandom & players',
                'logistics':'Logistics & schedule','collectibles':'Collectibles',
                'watch':'Watch & attend'}
@@ -52,7 +80,14 @@ STAGE_COLOR = {'Buying intent':'#E94560','Fandom & players':'#F39C12',
 
 def is_real_wc(q):
     s = ' ' + str(q).lower() + ' '
-    return not (any(j in s for j in JUNK) or any(o in s for o in OTHER_SPORT))
+    # hard rejects first (tech junk, other sports)
+    if any(j in s for j in JUNK) or any(o in s for o in OTHER_SPORT):
+        return False
+    # collectibles count as real (Panini surge is a genuine signal)
+    if any(c in s for c in COLLECT):
+        return True
+    # otherwise must match a WC token or a known player
+    return any(t in s for t in WC_TOKENS) or any(p in s for p in PLAYERS)
 
 
 def classify_q(q):
@@ -94,31 +129,49 @@ def show_panel1():
         'across metros; the real signal is **what each market searches for**, '
         'shown in the keyword map below.')
 
-    # KPIs: overall + fanbase strongholds
+    # KPIs: overall + the 3 SHARPEST fanbase strongholds (computed, not
+    # hardcoded — survives any keyword re-pull without going stale).
     top = df.loc[df['demand_score_norm'].idxmax()]
     c1,c2,c3,c4 = st.columns(4)
     c1.metric('🏆 Strongest Interest', top['city'], f"{top['demand_score_norm']:.0f}/100")
-    if kw is not None and not kw.empty:
-        for col,(label,k) in zip([c2,c3,c4],
-                [('🇲🇽 Mexico stronghold','Mexico'),
-                 ('🇦🇷 Argentina stronghold','Argentina'),
-                 ('🇺🇸 USMNT stronghold','USMNT')]):
-            if k in kw.columns:
-                col.metric(label, kw[k].idxmax(), 'over-indexes here')
 
-    # bottom line (driver story, computed)
-    if kw is not None and not kw.empty:
-        def tp(c, n=1): return kw[c].sort_values(ascending=False).head(n).index.tolist()
-        mex = ', '.join(tp('Mexico',3)) if 'Mexico' in kw else ''
-        arg = tp('Argentina')[0] if 'Argentina' in kw else ''
-        usm = ', '.join(tp('USMNT',2)) if 'USMNT' in kw else ''
-        tix = tp('Tickets')[0] if 'Tickets' in kw else ''
+    FLAG = {'Mexico':'🇲🇽','Argentina':'🇦🇷','USMNT':'🇺🇸','Brazil':'🇧🇷',
+            'Morocco':'🇲🇦','Ecuador':'🇪🇨','S. Korea':'🇰🇷'}
+    TEAMS = [t for t in FLAG if kw is not None and not kw.empty and t in kw.columns]
+
+    strongholds = []  # (team, top_city, peak_value)
+    if TEAMS:
+        # rank teams by how dominant their hottest metro is (peak value),
+        # then keep the sharpest 3 with DISTINCT cities so cards don't repeat.
+        ranked = sorted(TEAMS, key=lambda t: kw[t].max(), reverse=True)
+        used_cities = set()
+        for t in ranked:
+            city = kw[t].idxmax()
+            if city in used_cities:
+                continue
+            strongholds.append((t, city, int(kw[t].max())))
+            used_cities.add(city)
+            if len(strongholds) == 3:
+                break
+        for col,(team,city,peak) in zip([c2,c3,c4], strongholds):
+            col.metric(f'{FLAG.get(team,"")} {team} stronghold', city, 'over-indexes here')
+
+    # bottom line — templated from the SAME computed strongholds (no fixed
+    # narrative claim that a re-pull could contradict).
+    if strongholds:
+        parts = [f"**{team}** peaks in **{city}**" for team,city,_ in strongholds]
+        tix = kw['Tickets'].idxmax() if 'Tickets' in kw else ''
+        resale = kw['Resale'].idxmax() if 'Resale' in kw else ''
+        buy_line = ''
+        if tix:
+            buy_line = (f" On the buying side, **{tix}** leads primary-ticket search"
+                        + (f" and **{resale}** leads resale" if resale and resale != tix else '')
+                        + " — the demand signal that feeds secondary-market pricing.")
         st.info(
-            f"**Bottom line:** {top['city']} leads overall, but markets differ by "
-            f"*driver*. **Mexico** fandom powers **{mex}** (diaspora corridor); "
-            f"**Argentina** peaks in **{arg}**; **USMNT** in **{usm}** (MLS cities). "
-            f"**{tix}** tops ticket + host-city search — an *attendance* market "
-            f"figuring out how to go. Activate each for what's actually driving it.")
+            f"**Bottom line:** {top['city']} leads overall, but each metro is driven "
+            f"by a different fanbase — " + "; ".join(parts) + "."
+            + buy_line +
+            " Activate any column in the map below to see what's driving each city.")
     st.divider()
 
     # ── MAP (overall geography) ───────────────────────────────────
@@ -192,13 +245,29 @@ def show_panel1():
         rising = rising[rising['stage'] != 'awareness'].drop_duplicates('query')
 
         n = rising['stage'].value_counts()
-        st.info(
-            f"**Bottom line:** US World Cup search is **early-stage**. Live signal "
-            f"is **buying** ({n.get('commercial',0)} rising queries — resale + "
-            f"specific matchups) and **fandom** ({n.get('fandom',0)} — roster/player "
-            f"chatter), plus a **Panini collectibles** surge "
-            f"({n.get('collectibles',0)}). Almost no schedule/venue search "
-            f"({n.get('logistics',0)}) — the market hasn't hit trip-planning mode.")
+        # data-driven summary: rank buckets by live count, describe by what the
+        # queries actually are, and only call something "minimal" if it's truly low.
+        DESC = {'commercial':'buying (resale + match tickets)',
+                'fandom':'fandom (teams + players)',
+                'collectibles':'Panini collectibles',
+                'logistics':'schedule / venue planning',
+                'watch':'how-to-watch'}
+        ranked = [(s, int(c)) for s, c in n.sort_values(ascending=False).items() if s in DESC]
+        total = sum(c for _, c in ranked)
+        if ranked:
+            lead = ", ".join(f"**{DESC[s]}** ({c})" for s, c in ranked[:2])
+            tail_bits = [f"{DESC[s]} ({c})" for s, c in ranked[2:]]
+            tail = ("; also " + ", ".join(tail_bits)) if tail_bits else ""
+            # flag the weakest bucket only if it's genuinely thin (<15% of total)
+            weak = ranked[-1]
+            weak_note = ""
+            if total and weak[1] / total < 0.15:
+                weak_note = (f" Thinnest signal is **{DESC[weak[0]]}** ({weak[1]}) — "
+                             f"that part of the market is still early.")
+            st.info(
+                f"**Bottom line:** Of {total} live rising queries, the strongest pulls are "
+                f"{lead}{tail}.{weak_note} A snapshot of what US fans are *actively* "
+                f"searching as the tournament runs.")
 
         # composition bar — magnitude = real count (no fake sizing)
         order_stages = ['commercial','fandom','collectibles','logistics']
