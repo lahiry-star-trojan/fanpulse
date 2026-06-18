@@ -4,15 +4,17 @@
 
 A fan-intelligence MVP built on public data. It answers a question sponsors, host cities, and ticketing platforms don't have a clean read on: **who is the American soccer fan, where are they, and what are they actually doing?** FIFA World Cup 2026 is the first event; the design is event-agnostic (LA28 is the next candidate).
 
-> This is a portfolio project, not a commercial tool. The data is a **mid-May 2026 snapshot**, not live-refreshing (auto-refresh is on the roadmap). It runs entirely on free/public APIs.
+> This is a portfolio project, not a commercial tool. Most panels run on **point-in-time snapshots** (demand refreshed mid-tournament June 2026; resale prices captured live; sentiment is a pre-tournament snapshot, labeled as such in-app), not continuous live-refresh — auto-refresh is on the roadmap. News is genuinely live. It runs entirely on free/public APIs plus one managed-scraper call for resale data.
 
 ---
 
-## What's in it (5 panels)
+## What's in it (6 panels)
 
 **🗺️ Demand by host city.** Google Trends *interest by metro* for World Cup search terms, on one comparable scale, grouped by intent (fandom / buying / logistics). The headline number is fairly flat across big metros — so the panel leads with **what each market searches for**: a keyword-by-city heatmap and a national "rising searches" view.
 
 **🎟️ Ticket price tiers.** Official FIFA pricing across 104 matches, by seat tier (Accessible → Ultra) and stage. Shows how fast each tier escalates Group → Final, plus an affordability heatmap (work-days at the US median wage to buy one seat) and a host-city income-vs-price gap.
+
+**💸 Price vs demand.** The marketplace question: is the World Cup *resale* market mispriced? I pulled live SeatGeek resale floors for ~24 matches and mapped each against US search demand for the teams playing. The read: the secondary market is **mostly efficient** — most matches priced about where demand sits — with the signal in a few outliers (e.g. Portugal vs Uzbekistan priced above what search interest supports; Canada vs Switzerland a soft floor against real demand). Demand here is search interest — a leading indicator, not sales — shown as a quadrant scatter (demand × price) with each match labeled over/under/efficiently priced.
 
 **💬 Social sentiment.** ~2,100 YouTube comments scored with VADER. Team-level sentiment shown with **95% bootstrap confidence intervals** — so a thin sample reads as a wide band, not a false-precise number — plus per-team word clouds and top comments.
 
@@ -33,6 +35,8 @@ v1 looked clean but had real analytical gaps. A BI/analytics lead at an NHL club
 - **Sentiment honesty.** A 4-comment average (Mexico) was being compared next to a 221-comment one (Argentina) as if equally reliable. Added bootstrap confidence intervals so sample size is visible, not hidden.
 - **Ticket data integrity.** The affordability view had been running on hardcoded numbers. Rebuilt it from the actual 104-match category prices, and reframed from "the $32K front-row final" to how fast each tier escalates: the Ultra tier reaches ~12× its group-stage price by the Final, the entry tier only ~4.5×.
 
+- **Getting resale data the official API wouldn't give.** For the price-vs-demand panel I needed live secondary-market prices. SeatGeek's public API returned *empty* price stats for World Cup events (and FIFA's own data is just the flat face-value tier card — no match-level variance). The real resale floors were only on the rendered website, behind anti-bot. Rather than hand-collect or hard-code, I pulled them through a managed Apify scraper actor — match-level resale prices that genuinely vary ($430 floor for Ecuador–Curaçao vs $2,829 for Mexico–South Korea). The demand side uses per-team national search interest on a shared scale (one anchor team across batches, since Trends only compares five terms at once).
+
 The point of the project isn't the dashboard. It's being willing to find your own analysis wrong and fix it.
 
 ---
@@ -41,8 +45,9 @@ The point of the project isn't the dashboard. It's being willing to find your ow
 
 | Source | Powers | Cost |
 |---|---|---|
-| Google Trends (via SerpAPI) | Demand, keyword/diaspora, rising queries | Free tier |
+| Google Trends (via SerpAPI) | Demand, keyword/diaspora, rising queries, per-team national demand | Free tier |
 | FIFA official pricing | Ticket tiers | Public |
+| SeatGeek resale (via Apify actor) | Live resale floors for price-vs-demand | ~$0.20/run |
 | YouTube Data API v3 | Sentiment | Free tier |
 | US Census ACS / StatCan / INEGI | City income (affordability) | Public |
 | Google News (via SerpAPI) | News buzz | Free tier |
