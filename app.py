@@ -5,6 +5,7 @@ from panels.panel2_tickets import show_panel2
 from panels.panel3_sentiment import show_panel3
 from panels.panel4_briefing import show_panel4
 from panels.panel5_news import show_panel5
+from panels.panel6_pricing import show_panel6
 
 st.set_page_config(
     page_title='Fan Pulse | FIFA WC 2026',
@@ -63,25 +64,29 @@ except Exception as e:
 st.divider()
 
 # ── TABS ─────────────────────────────────────────────────────
-tab1,tab2,tab3,tab4,tab5 = st.tabs([
+t_demand, t_tickets, t_pricing, t_sentiment, t_brief, t_news = st.tabs([
     '🗺️ Demand Map',
     '🎟️ Ticket Prices',
+    '💸 Price vs Demand',
     '💬 Social Sentiment',
     '🤖 AI Briefing',
     '📰 News Buzz'
 ])
 
-with tab1:
+with t_demand:
     show_panel1()
 
-with tab2:
+with t_tickets:
     show_panel2()
 
-with tab3:
+with t_pricing:
+    show_panel6()
+
+with t_sentiment:
     show_panel3()
 
-with tab4:
+with t_brief:
     show_panel4()
 
-with tab5:
+with t_news:
     show_panel5()
