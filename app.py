@@ -16,8 +16,16 @@ st.set_page_config(
 st.markdown("""
 <style>
 .stMetric{background:#1E2A3A;border-radius:8px;padding:12px}
+/* force metric text light so it never goes dark-on-dark on any device/theme */
+.stMetric label, .stMetric [data-testid='stMetricLabel'],
+.stMetric [data-testid='stMetricLabel'] *{color:#AEB8C4 !important}
+.stMetric [data-testid='stMetricValue']{color:#FFFFFF !important}
+.stMetric [data-testid='stMetricDelta']{color:#1ABC9C !important}
 .stTabs [data-baseweb='tab']{font-size:15px;font-weight:600}
 h1,h2,h3{color:#FFFFFF}
+/* body text + captions readable on dark bg */
+.stMarkdown, .stCaption, p, span, li{color:#E8EaED}
+[data-testid='stCaptionContainer']{color:#AEB8C4 !important}
 .stButton>button{background:#E94560;color:white;border-radius:6px;border:none}
 .stButton>button:hover{background:#C0392B}
 </style>
