@@ -1,1 +1,8 @@
 .env
+
+__pycache__/
+*.pyc
+*.bak
+.env
+.env.bak
+data/raw/seatgeek_apify_raw.json

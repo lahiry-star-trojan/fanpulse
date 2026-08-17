@@ -149,7 +149,7 @@ def show_panel3():
             st.plotly_chart(
                 ci_bar(team_tbl, 'teams',
                        'Average Sentiment by Team (with confidence range)'),
-                use_container_width=True
+                width='stretch'
             )
             st.info(takeaway(team_tbl, 'teams', 'team'))
             st.caption(
@@ -184,7 +184,7 @@ def show_panel3():
             paper_bgcolor='rgba(0,0,0,0)',
             font=dict(color='white')
         )
-        st.plotly_chart(fig2, use_container_width=True)
+        st.plotly_chart(fig2, width='stretch')
 
     st.divider()
 
@@ -253,7 +253,7 @@ def show_panel3():
             plot_bgcolor='rgba(0,0,0,0)',
             font=dict(color='white')
         )
-        st.plotly_chart(fig3, use_container_width=True)
+        st.plotly_chart(fig3, width='stretch')
 
     st.divider()
 
@@ -291,7 +291,7 @@ def show_panel3():
         st.plotly_chart(
             ci_bar(city_tbl, 'cities',
                    'Average Sentiment by Host City (with confidence range)'),
-            use_container_width=True
+            width='stretch'
         )
         st.info(takeaway(city_tbl, 'cities', 'city'))
         st.caption(

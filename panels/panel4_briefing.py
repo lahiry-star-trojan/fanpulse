@@ -118,7 +118,7 @@ def show_panel4():
         with cols[i]:
             if st.button(
                 f"{ctx['icon']} {employer.split('—')[0].strip()}",
-                use_container_width=True,
+                width='stretch',
                 type='primary' if selected == employer else 'secondary'
             ):
                 st.session_state['selected_employer'] = employer
@@ -180,7 +180,7 @@ def show_panel4():
     if st.button(
         f"Generate {ctx['icon']} Briefing for {selected.split('—')[0].strip()}",
         type='primary',
-        use_container_width=True
+        width='stretch'
     ):
         with st.spinner(f"Generating briefing for {selected.split('—')[0].strip()}..."):
             txt = gen_briefing(ts, tks, ss, search_s, news_s,

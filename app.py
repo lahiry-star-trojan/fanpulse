@@ -45,7 +45,7 @@ with col_img:
     st.image('assets/fifa_teams.webp', width=150)
 
 # ── BANNER ───────────────────────────────────────────────────
-st.image('assets/fifa_players1.jpg', use_column_width=True)
+st.image('assets/fifa_players1.jpg', width='stretch')
 
 st.divider()
 

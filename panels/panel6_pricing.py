@@ -59,7 +59,7 @@ def show_panel6():
                        text='Low demand · high price<br><b>OVERPRICED</b>',
                        showarrow=False, font=dict(size=10, color='#E94560'),
                        xanchor='left', yanchor='top')
-    st.plotly_chart(fig, use_container_width=True)
+    st.plotly_chart(fig, width='stretch')
     st.caption('Big dots = both teams have a real demand read; faded small dots = '
                'one team approximated (minnow opponent). Lines = median split. '
                'Diagonal logic: above the trend = market charging more than search '
@@ -71,7 +71,7 @@ def show_panel6():
         ['match','demand','price','signal']].copy()
     show.columns = ['Match','Demand','Resale floor ($)','Signal']
     show['Resale floor ($)'] = show['Resale floor ($)'].map('${:,}'.format)
-    st.dataframe(show, use_container_width=True, hide_index=True)
+    st.dataframe(show, width='stretch', hide_index=True)
 
     st.info('**Bottom line:** the resale market is mostly **efficient** — price '
             'tracks search demand for most fixtures. The signal is in the outliers: '

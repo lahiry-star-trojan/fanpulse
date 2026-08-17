@@ -198,7 +198,7 @@ def show_panel1():
         margin=dict(l=0,r=0,t=30,b=0),
         title=dict(text='🔴 Strong  🟡 Medium  🔵 Lower (overall interest)',
                    x=0.5, font=dict(color='white', size=11)))
-    st.plotly_chart(fig, use_container_width=True)
+    st.plotly_chart(fig, width='stretch')
     st.divider()
 
     # ── KEYWORD-BY-CITY HEATMAP (the centerpiece) ─────────────────
@@ -219,7 +219,7 @@ def show_panel1():
                            yaxis=dict(autorange='reversed'),
                            xaxis=dict(side='top'),
                            paper_bgcolor='rgba(0,0,0,0)', font=dict(color='white'))
-        st.plotly_chart(heat, use_container_width=True)
+        st.plotly_chart(heat, width='stretch')
         st.caption(
             'Rows = cities (top = strongest overall). Columns = keywords, grouped '
             '**Fandom** (Mexico/Argentina/Brazil/Morocco/Ecuador/S.Korea/USMNT) · '
@@ -229,7 +229,7 @@ def show_panel1():
             '**over-indexes** on that search. Numbers are 0–100 interest. '
             'Read across a city to see what drives it.')
         with st.expander('📊 Show raw keyword scores (all cities × keywords)'):
-            st.dataframe(kw.reset_index().round(0), use_container_width=True,
+            st.dataframe(kw.reset_index().round(0), width='stretch',
                          hide_index=True)
     else:
         st.info('Keyword breakdown needs data/raw/trends_geo_raw.csv — re-run the pull.')
@@ -288,7 +288,7 @@ def show_panel1():
                            xaxis=dict(visible=False), yaxis=dict(visible=False),
                            paper_bgcolor='rgba(0,0,0,0)', plot_bgcolor='rgba(0,0,0,0)',
                            font=dict(color='white', size=13))
-        st.plotly_chart(comp, use_container_width=True)
+        st.plotly_chart(comp, width='stretch')
 
         # readable chips, grouped + colored by stage
         html = []

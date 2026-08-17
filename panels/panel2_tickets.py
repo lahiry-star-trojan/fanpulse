@@ -86,7 +86,7 @@ def show_panel2():
                       yaxis=dict(title='× its own group-stage price', ticksuffix='×'),
                       xaxis=dict(title='Tournament Stage'),
                       legend=dict(orientation='h', y=-0.2))
-    st.plotly_chart(fig, use_container_width=True)
+    st.plotly_chart(fig, width='stretch')
     st.caption(f'Each tier indexed to its own group-stage price (1×). Ultra climbs to '
                f'~{idx.loc["Ultra","Final"]:.0f}× by the Final while the lower tiers '
                f'stay near 3–4× — the top end escalates far faster, the same money '
@@ -108,7 +108,7 @@ def show_panel2():
     heat.update_layout(height=300, margin=dict(l=0,r=0,t=10,b=0),
                        yaxis=dict(autorange='reversed'),
                        paper_bgcolor='rgba(0,0,0,0)', font=dict(color='white'))
-    st.plotly_chart(heat, use_container_width=True)
+    st.plotly_chart(heat, width='stretch')
     acc_days, ult_days = days.loc['Accessible','Group Stage'], days.loc['Ultra','Final']
     st.caption(f'Darker = less affordable. Accessible group seat ≈ {acc_days:.0f} '
                f'work-days; Ultra Final seat ≈ {ult_days:.0f} — about '
@@ -140,7 +140,7 @@ def show_panel2():
                            plot_bgcolor='rgba(0,0,0,0)', font=dict(color='white'),
                            xaxis=dict(tickprefix='$', tickformat=','),
                            yaxis=dict(tickprefix='$', tickformat=','))
-        st.plotly_chart(fig3, use_container_width=True)
+        st.plotly_chart(fig3, width='stretch')
         st.caption('Mexican host cities carry the highest burden — global prices '
                    'against local wages.')
     st.divider()
@@ -162,7 +162,7 @@ def show_panel2():
     tbl = pdf[['city','stage','title','lowest_price','median_price','listings']].copy()
     tbl.columns = ['City','Stage','Match','Lowest','Median','Listings']
     st.dataframe(
-        tbl, use_container_width=True, hide_index=True,
+        tbl, width='stretch', hide_index=True,
         column_config={
             'Lowest': st.column_config.NumberColumn(format='$%d'),
             'Median': st.column_config.NumberColumn(format='$%d'),
@@ -186,4 +186,4 @@ def show_panel2():
                        yaxis=dict(range=[0, mdf['median_price'].max()*1.18]),
                        paper_bgcolor='rgba(0,0,0,0)',
                        plot_bgcolor='rgba(0,0,0,0)', font=dict(color='white'))
-    st.plotly_chart(fig5, use_container_width=True)
+    st.plotly_chart(fig5, width='stretch')

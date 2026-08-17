@@ -1,0 +1,71 @@
+title,city,date,stage,team_a,team_b,demand_a,demand_b,demand_score,tracked_teams
+Brazil vs Morocco,New York/New Jersey,2026-06-13,Group Stage,Brazil,Morocco,67.0,100.0,167.0,2
+Scotland vs Morocco,Boston,2026-06-19,Group Stage,Scotland,Morocco,15.0,98.0,113.0,1
+Scotland vs Brazil,Miami,2026-06-24,Group Stage,Scotland,Brazil,15.0,91.0,106.0,1
+USA vs Australia,Seattle,2026-06-19,Group Stage,USA,Australia,88.0,15.0,103.0,1
+USA vs Paraguay,Los Angeles,2026-06-13,Group Stage,USA,Paraguay,73.0,15.0,88.0,1
+Morocco vs Haiti,Atlanta,2026-06-24,Group Stage,Morocco,Haiti,64.0,15.0,79.0,1
+Ecuador vs Germany,New York/New Jersey,2026-06-25,Group Stage,Ecuador,Germany,58.0,15.0,73.0,1
+Brazil vs Haiti,Philadelphia,2026-06-20,Group Stage,Brazil,Haiti,52.0,15.0,67.0,1
+Côte d'Ivoire vs Ecuador,Philadelphia,2026-06-14,Group Stage,Côte d'Ivoire,Ecuador,15.0,28.0,43.0,1
+Argentina vs Algeria,Kansas City,2026-06-17,Group Stage,Argentina,Algeria,25.0,15.0,40.0,1
+Ecuador vs Curaçao,Kansas City,2026-06-21,Group Stage,Ecuador,Curaçao,21.0,15.0,36.0,1
+Jordan vs Argentina,Dallas,2026-06-28,Group Stage,Jordan,Argentina,15.0,16.0,31.0,1
+Argentina vs Austria,Dallas,2026-06-22,Group Stage,Argentina,Austria,16.0,15.0,31.0,1
+Norway vs France,Boston,2026-06-26,Group Stage,Norway,France,15.0,15.0,30.0,0
+Cabo Verde vs Saudi Arabia,Houston,2026-06-27,Group Stage,Cabo Verde,Saudi Arabia,15.0,15.0,30.0,0
+Uruguay vs Spain,Guadalajara,2026-06-27,Group Stage,Uruguay,Spain,15.0,15.0,30.0,0
+New Zealand vs Belgium,Vancouver,2026-06-27,Group Stage,New Zealand,Belgium,15.0,15.0,30.0,0
+Panama vs England,New York/New Jersey,2026-06-27,Group Stage,Panama,England,15.0,15.0,30.0,0
+Croatia vs Ghana,Philadelphia,2026-06-27,Group Stage,Croatia,Ghana,15.0,15.0,30.0,0
+Colombia vs Portugal,Miami,2026-06-27,Group Stage,Colombia,Portugal,15.0,15.0,30.0,0
+Algeria vs Austria,Kansas City,2026-06-28,Group Stage,Algeria,Austria,15.0,15.0,30.0,0
+Paraguay vs Australia,San Francisco Bay Area,2026-06-26,Group Stage,Paraguay,Australia,15.0,15.0,30.0,0
+Egypt vs IR Iran,Seattle,2026-06-27,Group Stage,Egypt,IR Iran,15.0,15.0,30.0,0
+Mexico vs South Africa,Mexico City,2026-06-11,Group Stage,Mexico,South Africa,15.0,15.0,30.0,1
+2A vs 2B,Los Angeles,2026-06-28,Round of 32,2A,2B,15.0,15.0,30.0,0
+1C vs 2F,Houston,2026-06-29,Round of 32,1C,2F,15.0,15.0,30.0,0
+1E vs 3ABCDF,Boston,2026-06-29,Round of 32,1E,3ABCDF,15.0,15.0,30.0,0
+1F vs 2C,Monterrey,2026-06-30,Round of 32,1F,2C,15.0,15.0,30.0,0
+2E vs 2I,Dallas,2026-06-30,Round of 32,2E,2I,15.0,15.0,30.0,0
+1I vs 3CDFGH,New York/New Jersey,2026-06-30,Round of 32,1I,3CDFGH,15.0,15.0,30.0,0
+1A vs 3CEFHI,Mexico City,2026-07-01,Round of 32,1A,3CEFHI,15.0,15.0,30.0,0
+1L vs 3EHIJK,Atlanta,2026-07-01,Round of 32,1L,3EHIJK,15.0,15.0,30.0,0
+1G vs 3AEHIJ,Seattle,2026-07-01,Round of 32,1G,3AEHIJ,15.0,15.0,30.0,0
+1D vs 3BEFIJ,San Francisco Bay Area,2026-07-02,Round of 32,1D,3BEFIJ,15.0,15.0,30.0,0
+1H vs 2J,Los Angeles,2026-07-02,Round of 32,1H,2J,15.0,15.0,30.0,0
+2K vs 2L,Toronto,2026-07-02,Round of 32,2K,2L,15.0,15.0,30.0,0
+1B vs 3EFGIJ,Vancouver,2026-07-03,Round of 32,1B,3EFGIJ,15.0,15.0,30.0,0
+2D vs 2G,Dallas,2026-07-03,Round of 32,2D,2G,15.0,15.0,30.0,0
+1J vs 2H,Miami,2026-07-03,Round of 32,1J,2H,15.0,15.0,30.0,0
+Tunisia vs Netherlands,Kansas City,2026-06-26,Group Stage,Tunisia,Netherlands,15.0,15.0,30.0,0
+Panama vs Croatia,Toronto,2026-06-23,Group Stage,Panama,Croatia,15.0,15.0,30.0,0
+Curaçao vs Côte d'Ivoire,Philadelphia,2026-06-25,Group Stage,Curaçao,Côte d'Ivoire,15.0,15.0,30.0,0
+Uzbekistan vs Colombia,Mexico City,2026-06-18,Group Stage,Uzbekistan,Colombia,15.0,15.0,30.0,0
+Qatar vs Switzerland,San Francisco Bay Area,2026-06-13,Group Stage,Qatar,Switzerland,15.0,15.0,30.0,0
+Haiti vs Scotland,Boston,2026-06-14,Group Stage,Haiti,Scotland,15.0,15.0,30.0,0
+Germany vs Curaçao,Houston,2026-06-14,Group Stage,Germany,Curaçao,15.0,15.0,30.0,0
+Netherlands vs Japan,Dallas,2026-06-14,Group Stage,Netherlands,Japan,15.0,15.0,30.0,0
+Spain vs Cabo Verde,Atlanta,2026-06-15,Group Stage,Spain,Cabo Verde,15.0,15.0,30.0,0
+Belgium vs Egypt,Seattle,2026-06-15,Group Stage,Belgium,Egypt,15.0,15.0,30.0,0
+Saudi Arabia vs Uruguay,Miami,2026-06-15,Group Stage,Saudi Arabia,Uruguay,15.0,15.0,30.0,0
+IR Iran vs New Zealand,Los Angeles,2026-06-16,Group Stage,IR Iran,New Zealand,15.0,15.0,30.0,0
+France vs Senegal,New York/New Jersey,2026-06-16,Group Stage,France,Senegal,15.0,15.0,30.0,0
+Austria vs Jordan,San Francisco Bay Area,2026-06-17,Group Stage,Austria,Jordan,15.0,15.0,30.0,0
+England vs Croatia,Dallas,2026-06-17,Group Stage,England,Croatia,15.0,15.0,30.0,0
+Ghana vs Panama,Toronto,2026-06-17,Group Stage,Ghana,Panama,15.0,15.0,30.0,0
+Canada vs Qatar,Vancouver,2026-06-19,Group Stage,Canada,Qatar,15.0,15.0,30.0,0
+South Africa vs South Korea,Monterrey,2026-06-25,Group Stage,South Africa,South Korea,15.0,15.0,30.0,1
+Mexico vs South Korea,Guadalajara,2026-06-19,Group Stage,Mexico,South Korea,15.0,15.0,30.0,2
+Germany vs Côte d'Ivoire,Toronto,2026-06-20,Group Stage,Germany,Côte d'Ivoire,15.0,15.0,30.0,0
+Tunisia vs Japan,Monterrey,2026-06-21,Group Stage,Tunisia,Japan,15.0,15.0,30.0,0
+Spain vs Saudi Arabia,Atlanta,2026-06-21,Group Stage,Spain,Saudi Arabia,15.0,15.0,30.0,0
+Belgium vs IR Iran,Los Angeles,2026-06-21,Group Stage,Belgium,IR Iran,15.0,15.0,30.0,0
+Uruguay vs Cabo Verde,Miami,2026-06-21,Group Stage,Uruguay,Cabo Verde,15.0,15.0,30.0,0
+New Zealand vs Egypt,Vancouver,2026-06-22,Group Stage,New Zealand,Egypt,15.0,15.0,30.0,0
+Norway vs Senegal,New York/New Jersey,2026-06-23,Group Stage,Norway,Senegal,15.0,15.0,30.0,0
+Jordan vs Algeria,San Francisco Bay Area,2026-06-23,Group Stage,Jordan,Algeria,15.0,15.0,30.0,0
+Portugal vs Uzbekistan,Houston,2026-06-23,Group Stage,Portugal,Uzbekistan,15.0,15.0,30.0,0
+England vs Ghana,Boston,2026-06-23,Group Stage,England,Ghana,15.0,15.0,30.0,0
+Switzerland vs Canada,Vancouver,2026-06-24,Group Stage,Switzerland,Canada,15.0,15.0,30.0,0
+1K vs 3DEIJL,Kansas City,2026-07-04,Round of 32,1K,3DEIJL,15.0,15.0,30.0,0
