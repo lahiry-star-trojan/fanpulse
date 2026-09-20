@@ -1,0 +1,301 @@
+{
+  "model": "claude-sonnet-4-6",
+  "rule": "catch>=5/6, fp<=1/4",
+  "catch": 6,
+  "identified": 6,
+  "false_positives": 0,
+  "results": [
+    {
+      "case_id": 1,
+      "case": "keyword_added",
+      "kind": "confounded",
+      "outcome": "caught",
+      "caught": true,
+      "identified": true,
+      "false_positive": false,
+      "confidence": "medium",
+      "comparison_valid": false,
+      "headline": "The apparent -10% demand drop is a measurement artifact \u2014 the later snapshot added 3 new, lower-value keywords that diluted the mean; underlying tracked demand is flat, while new signals reveal a strong broadcast-intent surge and a soft resale market.",
+      "concerns": [
+        "The two snapshots are NOT apples-to-apples: e4f5g6h added 3 keywords absent in a1b2c3d ('World Cup resale tickets', 'World Cup tickets near me', 'how to watch World Cup') and a new bucket ('watch'), growing the keyword set from 10 to 13. This inflates row counts per city from 10 to 13 and pulls city-level means down arithmetically, creating a false -9.8% overall decline.",
+        "The commercial bucket delta (-37.9%, -32 pts) is entirely explained by the new 'World Cup resale tickets' keyword (mean value ~20) being averaged alongside the unchanged 'World Cup tickets' (mean 84.5) \u2014 not by any real drop in ticket search interest.",
+        "Because the new keywords were not tracked in a1b2c3d, there is no baseline to measure their true period-over-period growth. The new-keyword deltas are structurally incomparable.",
+        "All 10 keywords present in both snapshots show zero change across all 11 cities \u2014 the delta engine confirmed perfect carry-through, suggesting the snapshots may share underlying source data for the overlapping keywords rather than being independently captured. This should be verified before treating the flat readings as confirmed stability."
+      ],
+      "n_tool_calls": 8,
+      "tools_called": [
+        "describe_instrument",
+        "describe_instrument",
+        "compute_deltas",
+        "compute_deltas",
+        "compute_deltas",
+        "get_values",
+        "get_values",
+        "get_values",
+        "submit_readout"
+      ]
+    },
+    {
+      "case_id": 2,
+      "case": "keyword_dropped",
+      "kind": "confounded",
+      "outcome": "caught",
+      "caught": true,
+      "identified": true,
+      "false_positive": false,
+      "confidence": "high",
+      "comparison_valid": false,
+      "headline": "There is no real demand shift between snapshots \u2014 all apparent city-level movement is caused by two keywords being dropped from the later snapshot, not by changes in search interest.",
+      "concerns": [
+        "The later snapshot (e4f5g6h, 2026-06-14) is missing two fandom keywords present in the earlier snapshot (a1b2c3d, 2026-05-20): 'USMNT' and 'Mexico soccer'. This reduces the row count from 143 to 121 and makes the two snapshots structurally non-equivalent.",
+        "Every single one of the 11 shared keywords shows exactly zero change in mean value across all 11 cities, confirming that all apparent city-level movement is a composition artifact \u2014 the result of averaging over fewer keywords, not actual shifts in demand.",
+        "'USMNT' had very high values in the earlier snapshot (range: 50\u201388, mean ~72) and 'Mexico soccer' had a wide range (6\u201369) with its strongest signal in Los Angeles (69). Their removal mechanically depresses fandom averages, particularly in Los Angeles, Seattle, Kansas City, and Atlanta.",
+        "The fandom bucket appears to move (-3.8%) but this is entirely because 2 of its 7 keywords vanished. Commercial, logistics, and watch buckets show zero change, consistent with no real movement.",
+        "The comparison as measured is not valid for trend analysis. Any city-level or bucket-level delta reported here reflects instrumentation change, not consumer behavior change."
+      ],
+      "n_tool_calls": 8,
+      "tools_called": [
+        "list_snapshots",
+        "describe_instrument",
+        "describe_instrument",
+        "compute_deltas",
+        "compute_deltas",
+        "compute_deltas",
+        "get_values",
+        "get_values",
+        "submit_readout"
+      ]
+    },
+    {
+      "case_id": 3,
+      "case": "city_dropped",
+      "kind": "confounded",
+      "outcome": "caught",
+      "caught": true,
+      "identified": true,
+      "false_positive": false,
+      "confidence": "medium",
+      "comparison_valid": false,
+      "headline": "Los Angeles dropped out of the later snapshot \u2014 that structural gap, not organic softening, drives the apparent -2.4% overall decline.",
+      "concerns": [
+        "Los Angeles is present in snapshot a1b2c3d but completely absent from snapshot e4f5g6h (143 rows \u2192 130 rows, 11 cities \u2192 10 cities). This makes a clean apples-to-apples comparison impossible and inflates the apparent decline across every bucket and keyword.",
+        "All city-level deltas for the 10 shared cities are exactly 0.0 \u2014 meaning no organic demand movement occurred in any comparable market. Every non-zero delta at the bucket and keyword level is entirely attributable to LA's removal.",
+        "Because LA is Google Trends' highest-profile DMA and had a mean value of ~44 in a1b2c3d, its absence suppresses the overall mean and distorts bucket/keyword averages by removing one city's worth of rows from each."
+      ],
+      "n_tool_calls": 5,
+      "tools_called": [
+        "describe_instrument",
+        "describe_instrument",
+        "compute_deltas",
+        "compute_deltas",
+        "compute_deltas",
+        "submit_readout"
+      ]
+    },
+    {
+      "case_id": 4,
+      "case": "scale_shift_UNFALSIFIABLE",
+      "kind": "unfalsifiable",
+      "outcome": "unfalsifiable_passed",
+      "caught": false,
+      "identified": false,
+      "false_positive": false,
+      "confidence": "high",
+      "comparison_valid": true,
+      "headline": "Overall demand surged +51% period-over-period, with logistics and watch intent leading the charge \u2014 a clear signal that fans are moving from awareness into active planning mode.",
+      "concerns": [],
+      "n_tool_calls": 5,
+      "tools_called": [
+        "describe_instrument",
+        "describe_instrument",
+        "compute_deltas",
+        "compute_deltas",
+        "compute_deltas",
+        "submit_readout"
+      ]
+    },
+    {
+      "case_id": 5,
+      "case": "sample_collapse",
+      "kind": "confounded",
+      "outcome": "caught",
+      "caught": true,
+      "identified": true,
+      "false_positive": false,
+      "confidence": "low",
+      "comparison_valid": false,
+      "headline": "The apparent +12% demand lift is an artifact of a 7-city drop in coverage, not a real market-wide increase \u2014 do not act on the headline number.",
+      "concerns": [
+        "Critical: Snapshot e4f5g6h covers only 4 cities (Boston, Los Angeles, Miami, New York) vs. 11 cities in a1b2c3d \u2014 Atlanta, Dallas, Houston, Kansas City, Philadelphia, San Francisco, and Seattle are entirely absent from the later snapshot.",
+        "The overall mean rising from 44.62 to 50.08 (+12.2%) is entirely explained by the missing cities, not by organic demand growth. The 4 cities that appear in both snapshots show zero change across all keywords.",
+        "Bucket-level and keyword-level deltas are mathematically valid only within the 4 overlapping cities \u2014 they cannot be generalized to the full 11-city footprint.",
+        "Row count dropped from 143 to 52, consistent with the city-coverage reduction and no other change in instrumentation."
+      ],
+      "n_tool_calls": 5,
+      "tools_called": [
+        "describe_instrument",
+        "describe_instrument",
+        "compute_deltas",
+        "compute_deltas",
+        "compute_deltas",
+        "submit_readout"
+      ]
+    },
+    {
+      "case_id": 6,
+      "case": "duplicate_rows",
+      "kind": "confounded",
+      "outcome": "caught",
+      "caught": true,
+      "identified": true,
+      "false_positive": false,
+      "confidence": "high",
+      "comparison_valid": false,
+      "headline": "The apparent -4.9% demand decline between snapshots is not real \u2014 e4f5g6h contains duplicate rows that corrupt every computed mean.",
+      "concerns": [
+        "Snapshot e4f5g6h has 215 rows vs. 143 in a1b2c3d \u2014 a ~50% inflation \u2014 despite identical keywords, buckets, and cities in both snapshots.",
+        "Raw row inspection confirms duplicate entries in e4f5g6h: e.g., Miami has 18 rows but only 13 unique keyword/city combinations, with USMNT, Mexico soccer, Argentina soccer, World Cup tickets near me, and World Cup stadiums each appearing twice.",
+        "Mexico soccer shows 17 rows in e4f5g6h vs. 11 in a1b2c3d, with 6 cities (Seattle, New York, San Francisco, Miami, Atlanta, Boston) duplicated outright \u2014 all at identical values.",
+        "Because duplicates carry the same values as originals, they do not shift individual group means dramatically, but they do skew cross-group averages and inflate row-weighted aggregations unpredictably.",
+        "The apparent -14.9% drop in Mexico soccer and -11.8% drop in Miami are artifacts of this duplication inflating denominators unevenly, not genuine demand movements.",
+        "This snapshot should not be used for any pricing or inventory decision until the duplication source is identified and corrected."
+      ],
+      "n_tool_calls": 9,
+      "tools_called": [
+        "describe_instrument",
+        "describe_instrument",
+        "compute_deltas",
+        "compute_deltas",
+        "compute_deltas",
+        "get_values",
+        "get_values",
+        "get_values",
+        "get_values",
+        "submit_readout"
+      ]
+    },
+    {
+      "case_id": 9,
+      "case": "stale_refresh",
+      "kind": "confounded",
+      "outcome": "caught",
+      "caught": true,
+      "identified": true,
+      "false_positive": false,
+      "confidence": "high",
+      "comparison_valid": false,
+      "headline": "Snapshots a1b2c3d and e4f5g6h are identical \u2014 zero movement detected across all 13 keywords, 11 cities, and 4 buckets.",
+      "concerns": [
+        "Every single delta is exactly 0.0 at every level of aggregation (city, bucket, keyword) \u2014 this is statistically implausible for a genuine two-period comparison and strongly suggests the two snapshots contain duplicate data.",
+        "Both snapshots share identical row counts (143), value ranges (1.0\u2013100.0), and overall means (44.62) \u2014 consistent with a data pipeline failure, a mis-tagged snapshot, or the same underlying pull being saved twice under different refs.",
+        "No actionable demand signal can be extracted until the root cause is confirmed and a genuine second-period snapshot is obtained."
+      ],
+      "n_tool_calls": 5,
+      "tools_called": [
+        "describe_instrument",
+        "describe_instrument",
+        "compute_deltas",
+        "compute_deltas",
+        "compute_deltas",
+        "submit_readout"
+      ]
+    },
+    {
+      "case_id": 7,
+      "case": "real_hetero_rise",
+      "kind": "clean",
+      "outcome": "correctly_clean",
+      "caught": false,
+      "identified": false,
+      "false_positive": false,
+      "confidence": "high",
+      "comparison_valid": true,
+      "headline": "Demand surged +22.7% across all 11 host cities in the 25 days between snapshots, with Los Angeles leading and logistics/watch intent accelerating fastest.",
+      "concerns": [],
+      "n_tool_calls": 6,
+      "tools_called": [
+        "list_snapshots",
+        "describe_instrument",
+        "describe_instrument",
+        "compute_deltas",
+        "compute_deltas",
+        "compute_deltas",
+        "submit_readout"
+      ]
+    },
+    {
+      "case_id": 8,
+      "case": "real_city_spike",
+      "kind": "clean",
+      "outcome": "correctly_clean",
+      "caught": false,
+      "identified": false,
+      "false_positive": false,
+      "confidence": "medium",
+      "comparison_valid": true,
+      "headline": "Dallas exploded +65% period-over-period, single-handedly driving the network's +8.6% overall gain \u2014 and several of its keyword values hit the Google Trends ceiling of 100, meaning the true demand spike may be even larger than measured.",
+      "concerns": [
+        "Dallas shows 6 of 13 keywords at the Google Trends maximum of 100 in e4f5g6h (USMNT, Brazil soccer, Morocco soccer, Mexico soccer, World Cup schedule, World Cup stadiums, how to watch World Cup), meaning demand may be censored and the true change is understated.",
+        "The overall network mean is pulled significantly by Dallas; without Dallas, the remaining 10 cities moved only ~2\u20134%, which is much more modest.",
+        "Google Trends values are relative indices, not absolute search volumes \u2014 percentage changes reflect relative interest shifts, not confirmed ticket purchases or revenue."
+      ],
+      "n_tool_calls": 7,
+      "tools_called": [
+        "describe_instrument",
+        "describe_instrument",
+        "compute_deltas",
+        "compute_deltas",
+        "compute_deltas",
+        "get_values",
+        "get_values",
+        "submit_readout"
+      ]
+    },
+    {
+      "case_id": 10,
+      "case": "real_mixed",
+      "kind": "clean",
+      "outcome": "correctly_clean",
+      "caught": false,
+      "identified": false,
+      "false_positive": false,
+      "confidence": "high",
+      "comparison_valid": true,
+      "headline": "Overall demand is flat (-1.5%) but masks sharp geographic rotation: Los Angeles surged +22% while Atlanta and Miami dropped ~21-26%.",
+      "concerns": [],
+      "n_tool_calls": 5,
+      "tools_called": [
+        "describe_instrument",
+        "describe_instrument",
+        "compute_deltas",
+        "compute_deltas",
+        "compute_deltas",
+        "submit_readout"
+      ]
+    },
+    {
+      "case_id": 11,
+      "case": "real_hetero_decline",
+      "kind": "clean",
+      "outcome": "correctly_clean",
+      "caught": false,
+      "identified": false,
+      "false_positive": false,
+      "confidence": "high",
+      "comparison_valid": true,
+      "headline": "Broad-based demand cooldown of ~25% across all cities, keywords, and buckets \u2014 no segment was spared, but Kansas City and Atlanta fell hardest.",
+      "concerns": [
+        "The max value dropped from 100.0 (a1b2c3d) to 84.6 (e4f5g6h), suggesting the Google Trends normalization anchor shifted between periods. This is common when the peak search moment moves. It means absolute values are not directly comparable on a 0\u2013100 scale, so the magnitude of the decline (~25%) should be treated as directionally correct but potentially slightly overstated or understated."
+      ],
+      "n_tool_calls": 5,
+      "tools_called": [
+        "describe_instrument",
+        "describe_instrument",
+        "compute_deltas",
+        "compute_deltas",
+        "compute_deltas",
+        "submit_readout"
+      ]
+    }
+  ]
+}

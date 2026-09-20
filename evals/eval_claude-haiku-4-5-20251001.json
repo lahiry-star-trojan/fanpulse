@@ -1,0 +1,317 @@
+{
+  "model": "claude-haiku-4-5-20251001",
+  "rule": "catch>=5/6, fp<=1/4",
+  "catch": 6,
+  "identified": 6,
+  "false_positives": 1,
+  "results": [
+    {
+      "case_id": 1,
+      "case": "keyword_added",
+      "kind": "confounded",
+      "outcome": "caught",
+      "caught": true,
+      "identified": true,
+      "false_positive": false,
+      "confidence": "low",
+      "comparison_valid": false,
+      "headline": "Search interest fell 9.8% overall, but this is not a valid comparison\u2014the measurement instrument changed between snapshots.",
+      "concerns": [
+        "Snapshot e4f5g6h added three new keywords not in a1b2c3d (World Cup resale tickets, World Cup tickets near me, how to watch World Cup), making the two snapshots non-comparable. The apparent 37.9% drop in the commercial bucket is an artifact of keyword expansion, not real demand decline. Overall 9.8% decline is driven by measurement changes, not market movement.",
+        "The 'World Cup tickets' keyword itself remained constant at 84.5 across both snapshots, indicating ticket demand stability. The decline is entirely attributable to new keywords with lower search volumes diluting the averages."
+      ],
+      "n_tool_calls": 9,
+      "tools_called": [
+        "describe_instrument",
+        "describe_instrument",
+        "compute_deltas",
+        "compute_deltas",
+        "compute_deltas",
+        "get_values",
+        "get_values",
+        "get_values",
+        "get_values",
+        "submit_readout"
+      ]
+    },
+    {
+      "case_id": 2,
+      "case": "keyword_dropped",
+      "kind": "confounded",
+      "outcome": "caught",
+      "caught": true,
+      "identified": true,
+      "false_positive": false,
+      "confidence": "high",
+      "comparison_valid": false,
+      "headline": "No meaningful demand movement\u2014the snapshot instruments are not comparable due to keyword measurement changes.",
+      "concerns": [
+        "Keyword set changed between snapshots: 'Mexico soccer' and 'USMNT' dropped from measurement in later snapshot, reducing fandom keywords from 7 to 5. This makes period-to-period comparison invalid\u2014the lower row counts in later snapshot (121 vs 143) and lower fandom bucket count reflect instrument change, not demand change.",
+        "All 11 comparable keywords show exactly 0.0% change between snapshots, with identical mean values. This uniformity across all keywords while keyword composition changed suggests possible data issues or recalibration in the measurement process."
+      ],
+      "n_tool_calls": 7,
+      "tools_called": [
+        "describe_instrument",
+        "describe_instrument",
+        "compute_deltas",
+        "compute_deltas",
+        "compute_deltas",
+        "get_values",
+        "get_values",
+        "submit_readout"
+      ]
+    },
+    {
+      "case_id": 3,
+      "case": "city_dropped",
+      "kind": "confounded",
+      "outcome": "caught",
+      "caught": true,
+      "identified": true,
+      "false_positive": false,
+      "confidence": "low",
+      "comparison_valid": false,
+      "headline": "Overall demand declined 2.4% period-over-period, driven primarily by Mexico soccer fandom interest falling 20.6%, but dataset comparability is compromised by Los Angeles dropping out of the second snapshot.",
+      "concerns": [
+        "Los Angeles (one of eleven host cities) is present in snapshot a1b2c3d but completely absent from snapshot e4f5g6h, representing 13 rows (9% of the earlier dataset)",
+        "The absence of LA data distorts keyword-level comparisons, especially for Mexico soccer which had its highest value (69.0) in LA and shows the largest decline (-20.6%)",
+        "Row counts differ: 143 rows in period A vs 130 rows in period B; the 13-row discrepancy precisely matches LA's full measurement set",
+        "Comparisons are computed using only the 10 cities present in both snapshots, but this masks what may be significant movement in the LA market"
+      ],
+      "n_tool_calls": 8,
+      "tools_called": [
+        "describe_instrument",
+        "describe_instrument",
+        "compute_deltas",
+        "compute_deltas",
+        "compute_deltas",
+        "get_values",
+        "get_values",
+        "get_values",
+        "submit_readout"
+      ]
+    },
+    {
+      "case_id": 4,
+      "case": "scale_shift_UNFALSIFIABLE",
+      "kind": "unfalsifiable",
+      "outcome": "unfalsifiable_passed",
+      "caught": false,
+      "identified": false,
+      "false_positive": false,
+      "confidence": "high",
+      "comparison_valid": true,
+      "headline": "Search interest in World Cup content surged 51% across all eleven US host cities, driven by logistics and fandom keywords with stadium info and event details showing the strongest gains.",
+      "concerns": [],
+      "n_tool_calls": 7,
+      "tools_called": [
+        "describe_instrument",
+        "describe_instrument",
+        "compute_deltas",
+        "compute_deltas",
+        "compute_deltas",
+        "get_values",
+        "get_values",
+        "submit_readout"
+      ]
+    },
+    {
+      "case_id": 5,
+      "case": "sample_collapse",
+      "kind": "confounded",
+      "outcome": "caught",
+      "caught": true,
+      "identified": true,
+      "false_positive": false,
+      "confidence": "high",
+      "comparison_valid": false,
+      "headline": "Snapshots are not comparable: second measurement covers only 4 of 11 cities, creating an invalid comparison.",
+      "concerns": [
+        "Snapshot e4f5g6h measures only 4 cities (Boston, Los Angeles, Miami, New York) vs. 11 cities in a1b2c3d",
+        "The apparent 12.2% overall increase is an artifact of measuring only higher-demand cities, not a real market trend",
+        "For the 4 overlapping cities, values are identical (0% change) in both periods",
+        "Snapshot e4f5g6h is missing Atlanta, Dallas, Houston, Kansas City, Philadelphia, San Francisco, and Seattle entirely"
+      ],
+      "n_tool_calls": 6,
+      "tools_called": [
+        "describe_instrument",
+        "describe_instrument",
+        "compute_deltas",
+        "compute_deltas",
+        "get_values",
+        "get_values",
+        "submit_readout"
+      ]
+    },
+    {
+      "case_id": 6,
+      "case": "duplicate_rows",
+      "kind": "confounded",
+      "outcome": "caught",
+      "caught": true,
+      "identified": true,
+      "false_positive": false,
+      "confidence": "medium",
+      "comparison_valid": false,
+      "headline": "Overall World Cup search interest declined 4.9%, driven primarily by reduced demand in key southern markets (Miami, Boston, Atlanta) and softening in national team fandom outside the US.",
+      "concerns": [
+        "Row count increased from 143 to 215 (50% jump), indicating the later snapshot has duplicate or additional measurements not present in the earlier snapshot\u2014this breaks the assumption of comparable measurement periods",
+        "Miami, Boston, and Atlanta show identical keyword values across both snapshots but with more rows in the later period, suggesting data duplication or repeated measurements rather than true time progression",
+        "The keyword 'Mexico soccer' shows identical values across 11 cities but increased row count (11 to 17 rows), indicating duplicated entries rather than new demand signals"
+      ],
+      "n_tool_calls": 9,
+      "tools_called": [
+        "describe_instrument",
+        "describe_instrument",
+        "compute_deltas",
+        "compute_deltas",
+        "compute_deltas",
+        "get_values",
+        "get_values",
+        "get_values",
+        "get_values",
+        "submit_readout"
+      ]
+    },
+    {
+      "case_id": 9,
+      "case": "stale_refresh",
+      "kind": "confounded",
+      "outcome": "caught",
+      "caught": true,
+      "identified": true,
+      "false_positive": false,
+      "confidence": "low",
+      "comparison_valid": false,
+      "headline": "The two snapshots are identical\u2014no change detected between periods.",
+      "concerns": [
+        "Both snapshots contain byte-for-byte identical data across all 143 rows and every dimension (city, bucket, keyword, and value). This means either: (1) the snapshots are duplicates of the same underlying data capture, (2) the system captured the same time period twice, or (3) demand literally did not move over the entire interval. Real-world Google Trends demand never remains perfectly flat across 11 cities, 13 keywords, and 4 buckets. This is a data collection or labeling error, not a market signal.",
+        "Zero absolute change across every single city, bucket, and keyword makes trend analysis impossible."
+      ],
+      "n_tool_calls": 7,
+      "tools_called": [
+        "describe_instrument",
+        "describe_instrument",
+        "compute_deltas",
+        "compute_deltas",
+        "compute_deltas",
+        "get_values",
+        "get_values",
+        "submit_readout"
+      ]
+    },
+    {
+      "case_id": 7,
+      "case": "real_hetero_rise",
+      "kind": "clean",
+      "outcome": "correctly_clean",
+      "caught": false,
+      "identified": false,
+      "false_positive": false,
+      "confidence": "high",
+      "comparison_valid": true,
+      "headline": "Demand for 2026 World Cup in the US surged 22.7% period-over-period, driven by ticket availability, logistics queries, and team-specific interest, with Los Angeles and New York leading growth.",
+      "concerns": [],
+      "n_tool_calls": 9,
+      "tools_called": [
+        "describe_instrument",
+        "describe_instrument",
+        "compute_deltas",
+        "compute_deltas",
+        "compute_deltas",
+        "get_values",
+        "get_values",
+        "get_values",
+        "get_values",
+        "submit_readout"
+      ]
+    },
+    {
+      "case_id": 8,
+      "case": "real_city_spike",
+      "kind": "clean",
+      "outcome": "false_positive",
+      "caught": false,
+      "identified": false,
+      "false_positive": true,
+      "confidence": "low",
+      "comparison_valid": false,
+      "headline": "Overall demand up 8.6% but driven by Dallas spike and measurement scale shifts; comparison reliability is compromised.",
+      "concerns": [
+        "Measurement scale appears to have shifted upward between snapshots: identical keywords hit 100+ in later period where they peaked at 70-87 in earlier period, across multiple cities. This suggests normalization or rescaling changed between captures, not organic demand growth.",
+        "Dallas dominates the overall change (+65.4%) while all other 10 cities move 1-5%, creating extreme concentration risk in a single market.",
+        "Ceiling effects visible: 9 of 13 Dallas keywords hit 100+ in later snapshot, limiting meaningful differentiation."
+      ],
+      "n_tool_calls": 12,
+      "tools_called": [
+        "describe_instrument",
+        "describe_instrument",
+        "compute_deltas",
+        "compute_deltas",
+        "compute_deltas",
+        "get_values",
+        "get_values",
+        "get_values",
+        "get_values",
+        "get_values",
+        "get_values",
+        "get_values",
+        "submit_readout"
+      ]
+    },
+    {
+      "case_id": 10,
+      "case": "real_mixed",
+      "kind": "clean",
+      "outcome": "correctly_clean",
+      "caught": false,
+      "identified": false,
+      "false_positive": false,
+      "confidence": "high",
+      "comparison_valid": true,
+      "headline": "Search interest redistributed sharply westward, with Los Angeles surging +22% while Atlanta and Miami collapsed by 21-26%.",
+      "concerns": [],
+      "n_tool_calls": 11,
+      "tools_called": [
+        "describe_instrument",
+        "describe_instrument",
+        "compute_deltas",
+        "compute_deltas",
+        "compute_deltas",
+        "get_values",
+        "get_values",
+        "get_values",
+        "get_values",
+        "get_values",
+        "get_values",
+        "submit_readout"
+      ]
+    },
+    {
+      "case_id": 11,
+      "case": "real_hetero_decline",
+      "kind": "clean",
+      "outcome": "correctly_clean",
+      "caught": false,
+      "identified": false,
+      "false_positive": false,
+      "confidence": "high",
+      "comparison_valid": true,
+      "headline": "Broad decline in World Cup search demand across all 11 host cities and all keyword categories, with a 24.9% overall drop and concentrated losses in high-intent commercial and logistics searches.",
+      "concerns": [],
+      "n_tool_calls": 9,
+      "tools_called": [
+        "describe_instrument",
+        "describe_instrument",
+        "compute_deltas",
+        "compute_deltas",
+        "compute_deltas",
+        "get_values",
+        "get_values",
+        "get_values",
+        "get_values",
+        "submit_readout"
+      ]
+    }
+  ]
+}
